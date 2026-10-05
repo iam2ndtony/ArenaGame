@@ -22,13 +22,11 @@ import {
   Flame,
   Award
 } from 'lucide-react';
-import { getAvatar } from '@/utils/avatars';
 import { sounds } from '@/utils/audio';
 
 interface Player {
   id: string;
   name: string;
-  avatar: string;
   score: number;
   correctCount: number;
   wrongCount: number;
@@ -67,7 +65,9 @@ export default function HostRoomPage() {
   useEffect(() => {
     if (!pin) return;
 
-    const s = io();
+    const s = io({
+      transports: ['websocket', 'polling'],
+    });
     setSocket(s);
 
     // Fetch network IP for QR code
@@ -98,11 +98,16 @@ export default function HostRoomPage() {
       });
 
     s.on('connect', () => {
-      // Re-register as host for this room
-      s.emit('host:create_room', { pin });
+      console.log('Host socket connected:', s.id, 'Registering for pin:', pin);
+      s.emit('host:register', { pin }, (res: { success: boolean; status?: 'LOBBY' | 'PLAYING' | 'ENDED' }) => {
+        if (res && res.status) {
+          setGameState(res.status);
+        }
+      });
     });
 
     s.on('room:leaderboard_update', ({ leaderboard }: { leaderboard: Player[] }) => {
+      console.log('Host received leaderboard update:', leaderboard.length, 'players');
       setPlayers(leaderboard);
     });
 
@@ -366,20 +371,19 @@ export default function HostRoomPage() {
                 <div style={{ fontSize: '3rem', marginBottom: '14px' }}>📡</div>
                 <h3 style={{ fontSize: '1.2rem', marginBottom: '6px' }}>Chưa có ai vào phòng</h3>
                 <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', maxWidth: '400px' }}>
-                  Mời các bạn mở camera điện thoại hoặc máy tính quét mã QR bên trái để chọn Nickname & Avatar tham chiến!
+                  Mời các bạn mở camera điện thoại hoặc máy tính quét mã QR bên trái để nhập Nickname tham gia!
                 </p>
               </div>
             ) : (
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))',
-                gap: '14px',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))',
+                gap: '10px',
                 overflowY: 'auto',
                 maxHeight: '440px',
                 paddingRight: '6px',
               }}>
                 {players.map((p) => {
-                  const avatar = getAvatar(p.avatar);
                   return (
                     <div
                       key={p.id}
@@ -387,33 +391,17 @@ export default function HostRoomPage() {
                       style={{
                         display: 'flex',
                         alignItems: 'center',
-                        gap: '12px',
-                        padding: '12px 14px',
-                        background: 'rgba(255, 255, 255, 0.05)',
-                        border: '1px solid rgba(255, 255, 255, 0.12)',
-                        borderRadius: '14px',
-                        position: 'relative',
+                        justifyContent: 'space-between',
+                        padding: '10px 14px',
+                        backgroundColor: '#1e293b',
+                        border: '1px solid var(--border-subtle)',
+                        borderRadius: '8px',
                       }}
                     >
-                      <div style={{
-                        width: '42px',
-                        height: '42px',
-                        borderRadius: '10px',
-                        background: 'rgba(0,0,0,0.3)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontSize: '22px',
-                      }}>
-                        {avatar.emoji}
-                      </div>
-
-                      <div style={{ flex: 1, minWidth: 0 }}>
-                        <div style={{ fontWeight: '700', fontSize: '0.95rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', minWidth: 0 }}>
+                        <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#10b981', flexShrink: 0 }} />
+                        <div style={{ fontWeight: '600', fontSize: '0.9rem', color: '#f8fafc', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                           {p.name}
-                        </div>
-                        <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                          {avatar.name}
                         </div>
                       </div>
 
@@ -423,11 +411,10 @@ export default function HostRoomPage() {
                         style={{
                           background: 'none',
                           border: 'none',
-                          color: '#f87171',
+                          color: 'var(--text-muted)',
                           cursor: 'pointer',
                           fontSize: '0.8rem',
-                          padding: '4px',
-                          opacity: 0.6,
+                          padding: '2px 6px',
                         }}
                       >
                         ✕
@@ -529,7 +516,6 @@ export default function HostRoomPage() {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
               {players.slice(0, 10).map((p, idx) => {
-                const avatar = getAvatar(p.avatar);
                 const isTop1 = idx === 0 && p.score > 0;
                 const isTop2 = idx === 1 && p.score > 0;
                 const isTop3 = idx === 2 && p.score > 0;
@@ -581,8 +567,6 @@ export default function HostRoomPage() {
                       }}>
                         {idx + 1}
                       </div>
-
-                      <div style={{ fontSize: '22px' }}>{avatar.emoji}</div>
 
                       <div>
                         <div style={{ fontWeight: '700', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '6px' }}>
@@ -706,8 +690,7 @@ export default function HostRoomPage() {
         {/* Rank 2 (Silver) */}
         {podium[1] && (
           <div className="podium-column animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            <div style={{ fontSize: '2.2rem', marginBottom: '4px' }}>{getAvatar(podium[1].avatar).emoji}</div>
-            <div style={{ fontWeight: '700', fontSize: '1.05rem', marginBottom: '2px' }}>{podium[1].name}</div>
+            <div style={{ fontWeight: '700', fontSize: '1.1rem', marginBottom: '2px' }}>{podium[1].name}</div>
             <div style={{ color: 'var(--accent-gold)', fontWeight: '700', fontSize: '1.15rem', marginBottom: '10px' }}>
               {podium[1].score.toLocaleString()} đ
             </div>
@@ -721,9 +704,7 @@ export default function HostRoomPage() {
         {/* Rank 1 (Gold) */}
         {podium[0] && (
           <div className="podium-column animate-slide-up" style={{ width: '150px' }}>
-            <div style={{ fontSize: '1.4rem', marginBottom: '2px' }}>👑</div>
-            <div style={{ fontSize: '2.8rem', marginBottom: '4px' }}>{getAvatar(podium[0].avatar).emoji}</div>
-            <div style={{ fontWeight: '800', fontSize: '1.2rem', color: 'var(--accent-gold)', marginBottom: '2px' }}>
+            <div style={{ fontWeight: '800', fontSize: '1.25rem', color: 'var(--accent-gold)', marginBottom: '2px' }}>
               {podium[0].name}
             </div>
             <div style={{ color: '#ffffff', fontWeight: '800', fontSize: '1.3rem', marginBottom: '10px' }}>
@@ -739,8 +720,7 @@ export default function HostRoomPage() {
         {/* Rank 3 (Bronze) */}
         {podium[2] && (
           <div className="podium-column animate-slide-up" style={{ animationDelay: '0.4s' }}>
-            <div style={{ fontSize: '2.2rem', marginBottom: '4px' }}>{getAvatar(podium[2].avatar).emoji}</div>
-            <div style={{ fontWeight: '700', fontSize: '1.05rem', marginBottom: '2px' }}>{podium[2].name}</div>
+            <div style={{ fontWeight: '700', fontSize: '1.1rem', marginBottom: '2px' }}>{podium[2].name}</div>
             <div style={{ color: 'var(--accent-gold)', fontWeight: '700', fontSize: '1.15rem', marginBottom: '10px' }}>
               {podium[2].score.toLocaleString()} đ
             </div>
@@ -782,8 +762,7 @@ export default function HostRoomPage() {
               return (
                 <tr key={p.id} style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.05)' }}>
                   <td style={{ padding: '14px 16px', fontWeight: '800' }}>#{i + 1}</td>
-                  <td style={{ padding: '14px 16px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <span>{getAvatar(p.avatar).emoji}</span>
+                  <td style={{ padding: '14px 16px' }}>
                     <span style={{ fontWeight: '700' }}>{p.name}</span>
                   </td>
                   <td style={{ padding: '14px 16px', textAlign: 'center' }}>

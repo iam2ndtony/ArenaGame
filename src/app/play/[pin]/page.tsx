@@ -16,7 +16,6 @@ import {
   User,
   AlertCircle
 } from 'lucide-react';
-import { AVATARS, getAvatar, AvatarInfo } from '@/utils/avatars';
 import { sounds } from '@/utils/audio';
 
 interface Question {
@@ -37,7 +36,6 @@ interface StealTarget {
   id: string;
   name: string;
   score: number;
-  avatar: string;
 }
 
 export default function PlayRoomPage() {
@@ -48,7 +46,6 @@ export default function PlayRoomPage() {
   const [socket, setSocket] = useState<Socket | null>(null);
   const [joined, setJoined] = useState(false);
   const [name, setName] = useState('');
-  const [selectedAvatar, setSelectedAvatar] = useState('marx');
   const [playerId, setPlayerId] = useState('');
 
   const [gameState, setGameState] = useState<'LOBBY' | 'PLAYING' | 'ENDED'>('LOBBY');
@@ -91,11 +88,9 @@ export default function PlayRoomPage() {
     if (typeof window !== 'undefined') {
       const savedId = localStorage.getItem('marx_player_id') || `p_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`;
       const savedName = localStorage.getItem('marx_player_name') || '';
-      const savedAvatar = localStorage.getItem('marx_player_avatar') || 'marx';
 
       setPlayerId(savedId);
       setName(savedName);
-      setSelectedAvatar(savedAvatar);
       localStorage.setItem('marx_player_id', savedId);
     }
   }, []);
@@ -104,8 +99,14 @@ export default function PlayRoomPage() {
   useEffect(() => {
     if (!pin) return;
 
-    const s = io();
+    const s = io({
+      transports: ['websocket', 'polling'],
+    });
     setSocket(s);
+
+    s.on('connect', () => {
+      console.log('Socket connected:', s.id);
+    });
 
     s.on('game:started', () => {
       setGameState('PLAYING');
@@ -186,11 +187,10 @@ export default function PlayRoomPage() {
     if (!socket) return;
 
     localStorage.setItem('marx_player_name', name.trim());
-    localStorage.setItem('marx_player_avatar', selectedAvatar);
 
     socket.emit(
       'player:join',
-      { pin, name: name.trim(), avatar: selectedAvatar, playerId },
+      { pin, name: name.trim(), playerId },
       (res: { success: boolean; error?: string; roomStatus?: 'LOBBY' | 'PLAYING' | 'ENDED' }) => {
         if (res.success) {
           setJoined(true);
@@ -311,7 +311,7 @@ export default function PlayRoomPage() {
     setSoundEnabled(!soundEnabled);
   };
 
-  // ----------------- SCREEN 1: REGISTER NICKNAME & AVATAR -----------------
+  // ----------------- SCREEN 1: REGISTER NICKNAME -----------------
   if (!joined) {
     return (
       <div style={{ maxWidth: '440px', margin: '0 auto', padding: '28px 16px 60px' }}>
@@ -335,77 +335,41 @@ export default function PlayRoomPage() {
             Vào phòng <span style={{ color: 'var(--accent-gold)' }}>#{pin}</span>
           </h1>
           <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-            Nhập biệt danh và chọn biểu tượng của bạn
+            Nhập biệt danh của bạn để tham gia đấu trường
           </p>
         </div>
 
         <form onSubmit={handleJoin} className="glass-panel" style={{ padding: '24px 20px' }}>
-          <div style={{ marginBottom: '18px' }}>
-            <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: '600', marginBottom: '6px', color: 'var(--text-secondary)' }}>
+          <div style={{ marginBottom: '24px' }}>
+            <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: '600', marginBottom: '8px', color: 'var(--text-secondary)' }}>
               BIỆT DANH CỦA BẠN:
             </label>
             <input
               type="text"
-              placeholder="Nhập tên hiển thị..."
+              placeholder="Nhập tên hiển thị (VD: Tuấn Anh, Lan Anh...)"
               maxLength={20}
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
+              autoFocus
               style={{
                 width: '100%',
-                padding: '12px 14px',
+                padding: '14px 16px',
                 backgroundColor: 'var(--bg-input)',
                 border: '1px solid var(--border-subtle)',
-                borderRadius: '8px',
+                borderRadius: '10px',
                 color: '#ffffff',
-                fontSize: '1rem',
+                fontSize: '1.05rem',
                 fontWeight: '600',
                 outline: 'none',
               }}
             />
           </div>
 
-          <div style={{ marginBottom: '22px' }}>
-            <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: '600', marginBottom: '8px', color: 'var(--text-secondary)' }}>
-              CHỌN BIỂU TƯỢNG ĐẠI DIỆN:
-            </label>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
-              gap: '10px',
-              maxHeight: '260px',
-              overflowY: 'auto',
-              padding: '4px',
-            }}>
-              {AVATARS.map((av) => (
-                <div
-                  key={av.id}
-                  onClick={() => setSelectedAvatar(av.id)}
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    padding: '10px 4px',
-                    borderRadius: '12px',
-                    background: selectedAvatar === av.id ? 'rgba(255, 199, 44, 0.2)' : 'rgba(255, 255, 255, 0.04)',
-                    border: selectedAvatar === av.id ? '2px solid var(--accent-gold)' : '1px solid rgba(255, 255, 255, 0.08)',
-                    cursor: 'pointer',
-                    transition: 'all 0.15s ease',
-                  }}
-                >
-                  <span style={{ fontSize: '26px' }}>{av.emoji}</span>
-                  <span style={{ fontSize: '0.7rem', fontWeight: '700', marginTop: '4px', textAlign: 'center', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '100%' }}>
-                    {av.name}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-
           <button
             type="submit"
             className="btn-primary"
-            style={{ width: '100%', padding: '16px' }}
+            style={{ width: '100%', padding: '16px', fontSize: '1rem', fontWeight: '700' }}
           >
             VÀO ĐẤU TRƯỜNG NGAY
           </button>
@@ -416,34 +380,29 @@ export default function PlayRoomPage() {
 
   // ----------------- SCREEN 2: WAITING LOBBY (WAITING FOR HOST TO START) -----------------
   if (gameState === 'LOBBY') {
-    const myAvatar = getAvatar(selectedAvatar);
+    const initial = name ? name.trim().charAt(0).toUpperCase() : 'Đ';
 
     return (
       <div style={{ maxWidth: '480px', margin: '0 auto', padding: '30px 20px', textAlign: 'center' }}>
         <div className="glass-panel-elevated" style={{ padding: '36px 24px' }}>
           <div style={{
-            fontSize: '4.5rem',
-            marginBottom: '12px',
-            animation: 'chestFloat 2s ease-in-out infinite',
+            width: '84px',
+            height: '84px',
+            borderRadius: '24px',
+            backgroundColor: '#1e293b',
+            border: '2px solid var(--accent-red)',
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '2.4rem',
+            color: 'var(--accent-gold)',
+            fontWeight: '900',
+            marginBottom: '16px',
           }}>
-            {myAvatar.emoji}
+            {initial}
           </div>
 
-          <div style={{
-            display: 'inline-block',
-            padding: '4px 12px',
-            background: 'rgba(255, 199, 44, 0.15)',
-            border: '1px solid rgba(255, 199, 44, 0.3)',
-            borderRadius: '20px',
-            fontSize: '0.8rem',
-            color: 'var(--accent-gold-bright)',
-            fontWeight: '700',
-            marginBottom: '8px',
-          }}>
-            {myAvatar.title}
-          </div>
-
-          <h2 style={{ fontSize: '1.7rem', fontWeight: '900', marginBottom: '6px' }}>
+          <h2 style={{ fontSize: '1.6rem', fontWeight: '800', marginBottom: '6px' }}>
             {name}
           </h2>
 
@@ -665,7 +624,20 @@ export default function PlayRoomPage() {
                         }}
                       >
                         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                          <span style={{ fontSize: '20px' }}>{getAvatar(t.avatar).emoji}</span>
+                          <span style={{
+                            width: '28px',
+                            height: '28px',
+                            borderRadius: '8px',
+                            backgroundColor: '#273142',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            fontSize: '13px',
+                            fontWeight: '800',
+                            color: 'var(--accent-gold)'
+                          }}>
+                            {t.name.charAt(0).toUpperCase()}
+                          </span>
                           <span style={{ fontWeight: '700' }}>{t.name}</span>
                         </div>
                         <span style={{ fontWeight: '800', color: 'var(--accent-gold)' }}>{t.score} đ</span>

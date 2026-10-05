@@ -154,6 +154,51 @@ app.prepare().then(() => {
 
   io.on('connection', (socket) => {
     // ----------------- HOST EVENTS -----------------
+    socket.on('host:register', ({ pin, duration = 300, questions = null } = {}, callback) => {
+      if (!pin) {
+        if (typeof callback === 'function') callback({ success: false, error: 'Thiếu mã PIN' });
+        return;
+      }
+
+      let room = rooms.get(pin);
+      if (!room) {
+        const roomQuestions = questions ? normalizeQuestions(questions) : defaultQuestions;
+        room = {
+          pin,
+          hostSocketId: socket.id,
+          status: 'LOBBY',
+          duration: Math.max(30, duration),
+          remainingTime: Math.max(30, duration),
+          timerInterval: null,
+          questions: roomQuestions,
+          players: new Map(),
+          events: [],
+        };
+        rooms.set(pin, room);
+        console.log(`[Host Registered] Khởi tạo phòng mới #${pin} cho host socket: ${socket.id}`);
+      } else {
+        room.hostSocketId = socket.id;
+        console.log(`[Host Registered] Tái kết nối host socket ${socket.id} vào phòng #${pin} (Đang có ${room.players.size} người chơi)`);
+      }
+
+      socket.join(`host:${pin}`);
+      socket.join(pin);
+
+      broadcastLeaderboard(room);
+
+      if (typeof callback === 'function') {
+        callback({
+          success: true,
+          pin,
+          status: room.status,
+          playerCount: room.players.size,
+          duration: room.duration,
+          remainingTime: room.remainingTime,
+          questionCount: room.questions.length,
+        });
+      }
+    });
+
     socket.on('host:create_room', ({ duration = 300, questions = null } = {}, callback) => {
       const pin = generatePin();
       const roomQuestions = questions
@@ -163,8 +208,8 @@ app.prepare().then(() => {
       const room = {
         pin,
         hostSocketId: socket.id,
-        status: 'LOBBY', // 'LOBBY' | 'PLAYING' | 'ENDED'
-        duration: Math.max(30, duration), // in seconds
+        status: 'LOBBY',
+        duration: Math.max(30, duration),
         remainingTime: Math.max(30, duration),
         timerInterval: null,
         questions: roomQuestions,
@@ -175,6 +220,8 @@ app.prepare().then(() => {
       rooms.set(pin, room);
       socket.join(`host:${pin}`);
       socket.join(pin);
+
+      console.log(`[Host Created] Phòng #${pin} đã được tạo bởi socket ${socket.id}`);
 
       if (typeof callback === 'function') {
         callback({
@@ -190,10 +237,16 @@ app.prepare().then(() => {
 
     socket.on('host:start_game', ({ pin }, callback) => {
       const room = rooms.get(pin);
-      if (!room || room.hostSocketId !== socket.id) {
-        if (typeof callback === 'function') callback({ success: false, error: 'Phòng không tồn tại hoặc bạn không phải Host' });
+      if (!room) {
+        console.warn(`[Start Game Lỗi] Không tìm thấy phòng #${pin}`);
+        if (typeof callback === 'function') callback({ success: false, error: 'Phòng không tồn tại' });
         return;
       }
+
+      // Luôn gán hostSocketId cho socket hiện tại đang yêu cầu bắt đầu
+      room.hostSocketId = socket.id;
+      socket.join(`host:${pin}`);
+      socket.join(pin);
 
       if (room.status === 'PLAYING') {
         if (typeof callback === 'function') callback({ success: true });
@@ -202,6 +255,8 @@ app.prepare().then(() => {
 
       room.status = 'PLAYING';
       room.remainingTime = room.duration;
+
+      console.log(`[Start Game] Phòng #${pin} bắt đầu trận đấu với ${room.players.size} người chơi!`);
 
       io.to(pin).emit('game:started', {
         duration: room.duration,
@@ -332,13 +387,11 @@ app.prepare().then(() => {
         player.socketId = socket.id;
         player.connected = true;
         player.name = finalName;
-        player.avatar = avatar || player.avatar;
       } else {
         // New player
         player = {
           id: playerId || `p_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`,
           name: finalName,
-          avatar: avatar || 'marx',
           score: 0,
           correctCount: 0,
           wrongCount: 0,
@@ -427,7 +480,7 @@ app.prepare().then(() => {
           .filter((p) => p.id !== player.id && p.score > 0)
           .sort((a, b) => b.score - a.score)
           .slice(0, 5)
-          .map((p) => ({ id: p.id, name: p.name, score: p.score, avatar: p.avatar }));
+          .map((p) => ({ id: p.id, name: p.name, score: p.score }));
 
         if (typeof callback === 'function') {
           callback({
@@ -603,13 +656,18 @@ app.prepare().then(() => {
       leaderboard,
       playerCount: room.players.size,
     });
+    if (room.hostSocketId) {
+      io.to(room.hostSocketId).emit('room:leaderboard_update', {
+        leaderboard,
+        playerCount: room.players.size,
+      });
+    }
   }
 
   function sanitizePlayer(p) {
     return {
       id: p.id,
       name: p.name,
-      avatar: p.avatar,
       score: p.score,
       correctCount: p.correctCount,
       wrongCount: p.wrongCount,
