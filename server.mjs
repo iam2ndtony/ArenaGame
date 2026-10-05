@@ -142,6 +142,29 @@ app.prepare().then(() => {
       return;
     }
 
+    // Direct static file serving for files in public directory
+    if (parsedUrl.pathname && !parsedUrl.pathname.startsWith('/api') && !parsedUrl.pathname.startsWith('/_next')) {
+      const publicFilePath = path.join(__dirname, 'public', parsedUrl.pathname.replace(/^\//, ''));
+      if (fs.existsSync(publicFilePath) && fs.statSync(publicFilePath).isFile()) {
+        const ext = path.extname(publicFilePath).toLowerCase();
+        const mimeTypes = {
+          '.jpg': 'image/jpeg',
+          '.jpeg': 'image/jpeg',
+          '.png': 'image/png',
+          '.webp': 'image/webp',
+          '.svg': 'image/svg+xml',
+          '.ico': 'image/x-icon',
+          '.json': 'application/json',
+          '.css': 'text/css',
+          '.js': 'application/javascript',
+        };
+        res.setHeader('Content-Type', mimeTypes[ext] || 'application/octet-stream');
+        res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+        fs.createReadStream(publicFilePath).pipe(res);
+        return;
+      }
+    }
+
     handle(req, res, parsedUrl);
   });
 

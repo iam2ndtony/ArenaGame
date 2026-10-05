@@ -19,6 +19,7 @@ COPY package*.json ./
 RUN npm ci --only=production
 
 COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/public ./public
 COPY --from=builder /app/src ./src
 COPY --from=builder /app/server.mjs ./server.mjs
 COPY --from=builder /app/next.config.mjs ./next.config.mjs

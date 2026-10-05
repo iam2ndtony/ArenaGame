@@ -674,9 +674,6 @@ export default function HostRoomPage() {
         <h1 style={{ fontSize: '2.2rem', fontWeight: '800', marginBottom: '8px' }}>
           Bảng Xếp Hạng Chung Cuộc
         </h1>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}>
-          Tổng kết kết quả thi đấu chuyên đề Chính sách tôn giáo & Dân tộc
-        </p>
       </div>
 
       {/* Podium Top 3 */}
