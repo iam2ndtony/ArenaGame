@@ -1,0 +1,392 @@
+[
+  {
+    "id": 1,
+    "category": "Triết học Mác - Lênin",
+    "question": "Vấn đề cơ bản của triết học là gì?",
+    "options": [
+      "Mối quan hệ giữa tư duy và tồn tại (giữa ý thức và vật chất)",
+      "Mối quan hệ giữa tự nhiên và xã hội",
+      "Vấn đề nguồn gốc của vũ trụ và muôn loài",
+      "Vấn đề phương pháp nhận thức thế giới"
+    ],
+    "correctIndex": 0,
+    "explanation": "Theo Ăngghen, vấn đề cơ bản lớn của mọi triết học, đặc biệt là triết học hiện đại, là vấn đề quan hệ giữa tư duy với tồn tại."
+  },
+  {
+    "id": 2,
+    "category": "Triết học Mác - Lênin",
+    "question": "Định nghĩa vật chất kinh điển của V.I. Lênin được nêu trong tác phẩm nào?",
+    "options": [
+      "Chủ nghĩa duy vật và chủ nghĩa kinh nghiệm phê phán",
+      "Bút ký triết học",
+      "Nhà nước và cách mạng",
+      "Ba nguồn gốc và ba bộ phận cấu thành chủ nghĩa Mác"
+    ],
+    "correctIndex": 0,
+    "explanation": "Lênin đưa ra định nghĩa vật chất nổi tiếng trong tác phẩm 'Chủ nghĩa duy vật và chủ nghĩa kinh nghiệm phê phán' (1909)."
+  },
+  {
+    "id": 3,
+    "category": "Triết học Mác - Lênin",
+    "question": "Theo quan điểm duy vật biện chứng, thuộc tính phổ biến nhất của mọi dạng vật chất là gì?",
+    "options": [
+      "Tồn tại khách quan ở ngoài và độc lập với ý thức con người",
+      "Có khối lượng và kích thước đo đếm được",
+      "Luôn đứng im và bất biến",
+      "Chỉ tồn tại trong tư duy trừu tượng"
+    ],
+    "correctIndex": 0,
+    "explanation": "Vật chất là thực tại khách quan, đem lại cho con người trong cảm giác, tồn tại không lệ thuộc vào cảm giác."
+  },
+  {
+    "id": 4,
+    "category": "Triết học Mác - Lênin",
+    "question": "Quy luật nào chỉ ra NGUỒN GỐC và ĐỘNG LỰC cơ bản của sự vận động và phát triển?",
+    "options": [
+      "Quy luật thống nhất và đấu tranh giữa các mặt đối lập (Quy luật mâu thuẫn)",
+      "Quy luật chuyển hóa từ những thay đổi về lượng dẫn đến thay đổi về chất",
+      "Quy luật phủ định của phủ định",
+      "Quy luật giá trị thặng dư"
+    ],
+    "correctIndex": 0,
+    "explanation": "Quy luật mâu thuẫn là 'hạt nhân' của phép biện chứng, vạch ra nguồn gốc, động lực bên trong của mọi sự vận động, phát triển."
+  },
+  {
+    "id": 5,
+    "category": "Triết học Mác - Lênin",
+    "question": "Quy luật chuyển hóa từ những thay đổi về lượng thành những thay đổi về chất chỉ ra điều gì?",
+    "options": [
+      "CÁCH THỨC của sự vận động và phát triển",
+      "Nguồn gốc của sự phát triển",
+      "Khuynh hướng của sự phát triển",
+      "Bản chất của nhận thức"
+    ],
+    "correctIndex": 0,
+    "explanation": "Lượng đổi dẫn đến chất đổi chỉ ra phương thức, cách thức mà sự vật phát triển."
+  },
+  {
+    "id": 6,
+    "category": "Triết học Mác - Lênin",
+    "question": "Quy luật phủ định của phủ định chỉ ra đặc trưng nào của sự phát triển?",
+    "options": [
+      "KHUYNH HƯỚNG phát triển theo đường xoáy ốc tiến lên",
+      "Động lực của sự phát triển",
+      "Tốc độ cố định của lịch sử",
+      "Sự tuần hoàn khép kín quay về điểm xuất phát"
+    ],
+    "correctIndex": 0,
+    "explanation": "Khuynh hướng phát triển diễn ra theo đường xoắn ốc: kế thừa cái tích cực của cái cũ và tiến lên trình độ cao hơn."
+  },
+  {
+    "id": 7,
+    "category": "Triết học Mác - Lênin",
+    "question": "Phạm trù nào chỉ giới hạn mà trong đó sự thay đổi về lượng chưa làm thay đổi căn bản về chất?",
+    "options": [
+      "Độ",
+      "Điểm nút",
+      "Bước nhảy",
+      "Thuộc tính"
+    ],
+    "correctIndex": 0,
+    "explanation": "Độ là khoảng giới hạn mà tại đó sự thay đổi về lượng chưa làm thay đổi căn bản về chất của sự vật."
+  },
+  {
+    "id": 8,
+    "category": "Triết học Mác - Lênin",
+    "question": "Theo chủ nghĩa duy vật lịch sử, yếu tố nào giữ vai trò quyết định sự phát triển của xã hội?",
+    "options": [
+      "Phương thức sản xuất vật chất",
+      "Điều kiện địa lý và khí hậu",
+      "Ý chí của các vĩ nhân lịch sử",
+      "Tôn giáo và đạo đức xã hội"
+    ],
+    "correctIndex": 0,
+    "explanation": "Sản xuất của cải vật chất là cơ sở của sự tồn tại và phát triển của xã hội loài người; phương thức sản xuất quyết định sự phát triển xã hội."
+  },
+  {
+    "id": 9,
+    "category": "Triết học Mác - Lênin",
+    "question": "Quan hệ sản xuất bao gồm mấy mặt cấu thành?",
+    "options": [
+      "3 mặt (sở hữu tư liệu sản xuất, tổ chức quản lý, phân phối sản phẩm)",
+      "2 mặt (người lao động và tư liệu lao động)",
+      "4 mặt (sản xuất, lưu thông, trao đổi, tiêu dùng)",
+      "5 mặt hình thái kinh tế - xã hội"
+    ],
+    "correctIndex": 0,
+    "explanation": "Quan hệ sản xuất gồm: Quan hệ sở hữu đối với tư liệu sản xuất, quan hệ trong tổ chức quản lý sản xuất, và quan hệ trong phân phối sản phẩm."
+  },
+  {
+    "id": 10,
+    "category": "Triết học Mác - Lênin",
+    "question": "Quy luật xã hội nào là quy luật phổ biến tác động trong toàn bộ tiến trình lịch sử nhân loại?",
+    "options": [
+      "Quy luật quan hệ sản xuất phù hợp với trình độ phát triển của lực lượng sản xuất",
+      "Quy luật đấu tranh giai cấp",
+      "Quy luật giá trị",
+      "Quy luật cạnh tranh tự do"
+    ],
+    "correctIndex": 0,
+    "explanation": "Sự phù hợp của quan hệ sản xuất với trình độ phát triển của lực lượng sản xuất là quy luật cơ bản chi phối mọi hình thái kinh tế - xã hội."
+  },
+  {
+    "id": 11,
+    "category": "Kinh tế chính trị Mác - Lênin",
+    "question": "Hàng hóa có hai thuộc tính cơ bản là gì?",
+    "options": [
+      "Giá trị sử dụng và Giá trị",
+      "Giá cả và Giá trị trao đổi",
+      "Công dụng và Vẻ đẹp",
+      "Chi phí và Lợi nhuận"
+    ],
+    "correctIndex": 0,
+    "explanation": "Hàng hóa là sản phẩm của lao động, có thể thỏa mãn nhu cầu nào đó của con người thông qua trao đổi; có 2 thuộc tính: giá trị sử dụng và giá trị."
+  },
+  {
+    "id": 12,
+    "category": "Kinh tế chính trị Mác - Lênin",
+    "question": "Lượng giá trị của một đơn vị hàng hóa được đo lường bằng đại lượng nào?",
+    "options": [
+      "Thời gian lao động xã hội cần thiết",
+      "Thời gian lao động cá biệt của người sản xuất",
+      "Số lượng nguyên vật liệu tiêu hao",
+      "Giá bán niêm yết trên thị trường"
+    ],
+    "correctIndex": 0,
+    "explanation": "Lượng giá trị của hàng hóa được xác định bởi lượng lao động tiêu hao để sản xuất ra hàng hóa đó, tính bằng thời gian lao động xã hội cần thiết."
+  },
+  {
+    "id": 13,
+    "category": "Kinh tế chính trị Mác - Lênin",
+    "question": "Giá trị thặng dư (m) theo Các Mác là phần giá trị do ai tạo ra?",
+    "options": [
+      "Do công nhân làm thuê tạo ra ngoài thời gian lao động tất yếu",
+      "Do máy móc hiện đại sinh ra trong quá trình vận hành",
+      "Do nhà tư bản đóng góp bằng trí tuệ quản lý",
+      "Do sự may mắn trong quá trình buôn bán lưu thông"
+    ],
+    "correctIndex": 0,
+    "explanation": "Giá trị thặng dư là bộ phận giá trị mới dôi ra ngoài giá trị sức lao động do công nhân làm thuê tạo ra và bị nhà tư bản chiếm đoạt không công."
+  },
+  {
+    "id": 14,
+    "category": "Kinh tế chính trị Mác - Lênin",
+    "question": "Tư bản bất biến (ký hiệu là c) là bộ phận tư bản dùng để mua yếu tố nào?",
+    "options": [
+      "Tư liệu sản xuất (nhà xưởng, máy móc, nguyên vật liệu)",
+      "Sức lao động của công nhân",
+      "Bản quyền phát minh sáng chế",
+      "Cổ phiếu và trái phiếu công ty"
+    ],
+    "correctIndex": 0,
+    "explanation": "Tư bản bất biến (c) tồn tại dưới hình thái tư liệu sản xuất mà giá trị của nó được bảo tồn và chuyển nguyên vẹn vào sản phẩm mới."
+  },
+  {
+    "id": 15,
+    "category": "Kinh tế chính trị Mác - Lênin",
+    "question": "Tư bản khả biến (ký hiệu là v) có đặc điểm nổi bật nào?",
+    "options": [
+      "Biến đổi về lượng, tăng lên trong quá trình sản xuất nhờ tạo ra giá trị mới",
+      "Không bao giờ thay đổi giá trị trong suốt chu kỳ kinh doanh",
+      "Chỉ bao gồm khấu hao máy móc trang thiết bị",
+      "Là khoản tiền trả lãi suất ngân hàng"
+    ],
+    "correctIndex": 0,
+    "explanation": "Tư bản khả biến (v) là bộ phận tư bản biến thành sức lao động, trong quá trình sản xuất nó tạo ra một lượng giá trị mới lớn hơn giá trị của bản thân nó."
+  },
+  {
+    "id": 16,
+    "category": "Kinh tế chính trị Mác - Lênin",
+    "question": "Hai phương pháp sản xuất giá trị thặng dư cơ bản trong chủ nghĩa tư bản là gì?",
+    "options": [
+      "Sản xuất giá trị thặng dư tuyệt đối và tương đối",
+      "Sản xuất giá trị thặng dư nội bộ và đối ngoại",
+      "Sản xuất giá trị thặng dư ngắn hạn và dài hạn",
+      "Sản xuất giá trị thặng dư trực tiếp và gián tiếp"
+    ],
+    "correctIndex": 0,
+    "explanation": "Có 2 phương pháp: Kéo dài tuyệt đối ngày lao động (tuyệt đối) hoặc rút ngắn thời gian lao động tất yếu bằng cách tăng năng suất lao động (tương đối)."
+  },
+  {
+    "id": 17,
+    "category": "Kinh tế chính trị Mác - Lênin",
+    "question": "Quy luật kinh tế căn bản của sản xuất hàng hóa là quy luật nào?",
+    "options": [
+      "Quy luật giá trị",
+      "Quy luật cung cầu",
+      "Quy luật lưu thông tiền tệ",
+      "Quy luật cạnh tranh"
+    ],
+    "correctIndex": 0,
+    "explanation": "Quy luật giá trị là quy luật kinh tế căn bản của sản xuất và trao đổi hàng hóa, đòi hỏi sản xuất và trao đổi phải dựa trên hao phí lao động xã hội cần thiết."
+  },
+  {
+    "id": 18,
+    "category": "Kinh tế chính trị Mác - Lênin",
+    "question": "Thực chất của tích lũy tư bản là gì?",
+    "options": [
+      "Sự chuyển hóa một phần giá trị thặng dư trở lại thành tư bản",
+      "Sự tiết kiệm tiêu dùng cá nhân của nhà tư bản",
+      "Việc vay vốn thêm từ các tổ chức tài chính quốc tế",
+      "Sự gia tăng tiền mặt trong két sắt ngân hàng"
+    ],
+    "correctIndex": 0,
+    "explanation": "Tích lũy tư bản là việc tư bản hóa giá trị thặng dư, tức là biến một phần m thành tư bản phụ thêm để mở rộng quy mô sản xuất."
+  },
+  {
+    "id": 19,
+    "category": "Chủ nghĩa xã hội khoa học",
+    "question": "Tác phẩm nào đánh dấu sự ra đời chính thức của Chủ nghĩa xã hội khoa học?",
+    "options": [
+      "Tuyên ngôn của Đảng Cộng sản (1848)",
+      "Tư bản luận (1867)",
+      "Biện chứng của tự nhiên",
+      "Hệ tư tưởng Đức"
+    ],
+    "correctIndex": 0,
+    "explanation": "Tháng 2/1848, tác phẩm 'Tuyên ngôn của Đảng Cộng sản' do C.Mác và Ph.Ăngghen soạn thảo được công bố, đánh dấu sự ra đời của CNXHKH."
+  },
+  {
+    "id": 20,
+    "category": "Chủ nghĩa xã hội khoa học",
+    "question": "Ai là giai cấp có sứ mệnh lịch sử xóa bỏ chủ nghĩa tư bản, xây dựng chủ nghĩa xã hội và chủ nghĩa cộng sản?",
+    "options": [
+      "Giai cấp công nhân",
+      "Giai cấp nông dân",
+      "Tầng lớp trí thức",
+      "Tầng lớp tiểu thương"
+    ],
+    "correctIndex": 0,
+    "explanation": "Giai cấp công nhân là sản phẩm của nền đại công nghiệp, đại biểu cho phương thức sản xuất tiên tiến, có sứ mệnh lịch sử toàn thế giới."
+  },
+  {
+    "id": 21,
+    "category": "Chủ nghĩa xã hội khoa học",
+    "question": "Đặc trưng bản chất của nền dân chủ xã hội chủ nghĩa là gì?",
+    "options": [
+      "Là nền dân chủ rộng rãi cho đa số nhân dân lao động",
+      "Là nền dân chủ thuần túy, tuyệt đối không có giới hạn pháp lý",
+      "Chỉ bảo vệ quyền lợi của một nhóm tinh hoa chính trị",
+      "Không thừa nhận sự lãnh đạo của bất kỳ chính đảng nào"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nền dân chủ XHCN là nền dân chủ của đa số nhân dân lao động, do Đảng Cộng sản lãnh đạo, mang bản chất của giai cấp công nhân."
+  },
+  {
+    "id": 22,
+    "category": "Chủ nghĩa xã hội khoa học",
+    "question": "Thời kỳ quá độ lên chủ nghĩa xã hội là tất yếu khách quan vì sao?",
+    "options": [
+      "Xã hội mới không thể tự phát nảy sinh trong lòng xã hội cũ mà cần thời gian cải biến cách mạng toàn diện",
+      "Do ý muốn chủ quan của những người lãnh đạo nhà nước",
+      "Để kéo dài thời gian tồn tại của chế độ bóc lột",
+      "Vì các nước phương Tây yêu cầu phải có giai đoạn thử nghiệm"
+    ],
+    "correctIndex": 0,
+    "explanation": "Thời kỳ quá độ là cần thiết vì CNXH đòi hỏi xây dựng cơ sở vật chất kỹ thuật mới và cải biến sâu sắc các quan hệ kinh tế, chính trị, văn hóa cũ."
+  },
+  {
+    "id": 23,
+    "category": "Triết học Mác - Lênin",
+    "question": "Thực tiễn là toàn bộ hoạt động...",
+    "options": [
+      "Vật chất - cảm tính, có tính lịch sử - xã hội nhằm cải tạo tự nhiên và xã hội",
+      "Tinh thần trừu tượng diễn ra trong bộ não con người",
+      "Chiêm nghiệm tôn giáo hướng tới thế giới siêu nhiên",
+      "Thí nghiệm lý thuyết trên giấy tờ"
+    ],
+    "correctIndex": 0,
+    "explanation": "Thực tiễn là toàn bộ hoạt động vật chất có mục đích, mang tính lịch sử - xã hội của con người nhằm cải tạo tự nhiên và xã hội."
+  },
+  {
+    "id": 24,
+    "category": "Triết học Mác - Lênin",
+    "question": "Thực tiễn đóng vai trò gì đối với nhận thức?",
+    "options": [
+      "Là cơ sở, động lực, mục đích của nhận thức và là tiêu chuẩn của chân lý",
+      "Chỉ là yếu tố phụ trợ sau khi đã có lý thuyết hoàn chỉnh",
+      "Không có quan hệ gì với quá trình hình thành tư duy",
+      "Là sản phẩm phái sinh thuần túy từ ý thức"
+    ],
+    "correctIndex": 0,
+    "explanation": "Thực tiễn đóng vai trò là cơ sở, động lực, mục đích của nhận thức và là tiêu chuẩn duy nhất để kiểm tra chân lý."
+  },
+  {
+    "id": 25,
+    "category": "Kinh tế chính trị Mác - Lênin",
+    "question": "Cạnh tranh giữa các ngành sản xuất khác nhau dẫn đến kết quả gì?",
+    "options": [
+      "Hình thành tỷ suất lợi nhuận bình quân và giá cả sản xuất",
+      "Hình thành giá trị thị trường của từng loại hàng hóa",
+      "Triệt tiêu hoàn toàn sự phát triển khoa học công nghệ",
+      "Dẫn tới việc xóa bỏ chế độ tư hữu tư bản chủ nghĩa"
+    ],
+    "correctIndex": 0,
+    "explanation": "Cạnh tranh giữa các ngành dẫn đến sự tự do di chuyển tư bản từ ngành có tỷ suất lợi nhuận thấp sang ngành cao, hình thành tỷ suất lợi nhuận bình quân."
+  },
+  {
+    "id": 26,
+    "category": "Kinh tế chính trị Mác - Lênin",
+    "question": "Tổ chức độc quyền là sự liên minh giữa các nhà tư bản lớn nhằm mục đích gì?",
+    "options": [
+      "Thu lợi nhuận độc quyền cao bằng cách khống chế sản xuất và tiêu thụ",
+      "Hỗ trợ miễn phí hàng hóa cho người tiêu dùng nghèo",
+      "Tăng cường tính cạnh tranh tự do tuyệt đối trên thị trường",
+      "Xóa bỏ hoàn toàn tình trạng thất nghiệp"
+    ],
+    "correctIndex": 0,
+    "explanation": "Tổ chức độc quyền nắm giữ phần lớn sản xuất và lưu thông hàng hóa nhằm thu được lợi nhuận độc quyền cao."
+  },
+  {
+    "id": 27,
+    "category": "Chủ nghĩa xã hội khoa học",
+    "question": "Nguyên tắc phân phối chủ yếu trong giai đoạn đầu (chủ nghĩa xã hội) là gì?",
+    "options": [
+      "Làm theo năng lực, hưởng theo lao động",
+      "Làm theo năng lực, hưởng theo nhu cầu",
+      "Phân phối cào bằng bình quân tuyệt đối",
+      "Phân phối dựa theo nguồn gốc xuất thân gia đình"
+    ],
+    "correctIndex": 0,
+    "explanation": "Trong CNXH, nguyên tắc phân phối chủ đạo là 'Làm theo năng lực, hưởng theo lao động'; sang giai đoạn cao (CNCS) mới đạt 'hưởng theo nhu cầu'."
+  },
+  {
+    "id": 28,
+    "category": "Triết học Mác - Lênin",
+    "question": "Ý thức có nguồn gốc từ đâu?",
+    "options": [
+      "Nguồn gốc tự nhiên (bộ não người, thế giới khách quan) và nguồn gốc xã hội (lao động, ngôn ngữ)",
+      "Chỉ bắt nguồn từ ý niệm tuyệt đối của Thượng đế",
+      "Sinh ra thuần túy do cảm xúc bẩm sinh của từng cá nhân",
+      "Do di truyền sinh học từ thế hệ này sang thế hệ khác"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ý thức có 2 nguồn gốc: Nguồn gốc tự nhiên (não người và thế giới tác động lên não) và nguồn gốc xã hội (lao động và ngôn ngữ - trong đó lao động giữ vai trò quyết định)."
+  },
+  {
+    "id": 29,
+    "category": "Triết học Mác - Lênin",
+    "question": "Mối quan hệ biện chứng giữa tồn tại xã hội và ý thức xã hội là gì?",
+    "options": [
+      "Tồn tại xã hội quyết định ý thức xã hội, nhưng ý thức xã hội có tính độc lập tương đối và tác động trở lại",
+      "Ý thức xã hội luôn quyết định và tạo ra tồn tại xã hội",
+      "Tồn tại xã hội và ý thức xã hội hoàn toàn độc lập, không liên quan nhau",
+      "Ý thức xã hội luôn thay đổi ngay lập tức theo mọi biến động kinh tế"
+    ],
+    "correctIndex": 0,
+    "explanation": "Tồn tại xã hội quyết định ý thức xã hội, song ý thức xã hội có tính độc lập tương đối, có thể vượt trước hoặc lạc hậu hơn và tác động trở lại mạnh mẽ."
+  },
+  {
+    "id": 30,
+    "category": "Chủ nghĩa xã hội khoa học",
+    "question": "Cơ cấu xã hội - giai cấp trong thời kỳ quá độ lên chủ nghĩa xã hội ở Việt Nam gồm những lực lượng nòng cốt nào?",
+    "options": [
+      "Giai cấp công nhân, giai cấp nông dân, đội ngũ trí thức, đội ngũ doanh nhân...",
+      "Chỉ duy nhất giai cấp công nhân",
+      "Tư sản công nghiệp và địa chủ phong kiến",
+      "Giai cấp vô sản quốc tế"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ở Việt Nam, liên minh công nhân - nông dân - trí thức là nền tảng chính trị - xã hội vững chắc của khối đại đoàn kết toàn dân tộc dưới sự lãnh đạo của Đảng."
+  }
+]
