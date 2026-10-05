@@ -34,7 +34,7 @@ export default function RootLayout({
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundImage: 'url(/background.jpg)',
+            backgroundImage: 'url(/background.jpg?v=2)',
             backgroundSize: 'cover',
             backgroundPosition: 'center center',
             backgroundRepeat: 'no-repeat',

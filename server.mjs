@@ -159,7 +159,7 @@ app.prepare().then(() => {
           '.js': 'application/javascript',
         };
         res.setHeader('Content-Type', mimeTypes[ext] || 'application/octet-stream');
-        res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+        res.setHeader('Cache-Control', 'no-cache, must-revalidate');
         fs.createReadStream(publicFilePath).pipe(res);
         return;
       }
