@@ -27,6 +27,7 @@ export default function RootLayout({
       </head>
       <body>
         <div
+          id="app-fixed-bg"
           style={{
             position: 'fixed',
             top: 0,
@@ -37,7 +38,7 @@ export default function RootLayout({
             backgroundSize: 'cover',
             backgroundPosition: 'center center',
             backgroundRepeat: 'no-repeat',
-            zIndex: -1,
+            zIndex: 0,
             pointerEvents: 'none',
           }}
         />

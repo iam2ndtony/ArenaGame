@@ -41,8 +41,23 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-body {
+html {
   background-color: #450c12;
+  background-image: url('/background.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+body {
+  background-color: transparent;
+  background-image: url('/background.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   color: var(--text-primary);
   font-family: var(--font-family);
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
@@ -51,6 +66,7 @@ body {
   min-height: 100vh;
   line-height: 1.55;
   overflow-x: hidden;
+  position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {
