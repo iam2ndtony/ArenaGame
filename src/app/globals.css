@@ -42,14 +42,7 @@
 }
 
 body {
-  background-color: var(--bg-main);
-  background-image: 
-    linear-gradient(rgba(24, 4, 7, 0.65), rgba(18, 3, 5, 0.82)),
-    url('/background.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background-color: #450c12;
   color: var(--text-primary);
   font-family: var(--font-family);
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';

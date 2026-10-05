@@ -62,6 +62,27 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+
+        <button
+          onClick={() => router.push('/practice')}
+          className="btn-ghost"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
+            borderColor: 'var(--accent-gold)',
+            color: 'var(--accent-gold)',
+            fontWeight: '700',
+            fontSize: '0.92rem',
+            padding: '10px 20px',
+            borderRadius: '12px',
+            backgroundColor: 'rgba(245, 158, 11, 0.12)',
+            transition: 'all 0.15s ease',
+            cursor: 'pointer',
+          }}
+        >
+          🎯 Thi Thử Ngay
+        </button>
       </header>
 
       {/* Hero Section */}
@@ -70,9 +91,28 @@ export default function HomePage() {
           Đấu trường trắc nghiệm <br />
           <span style={{ color: 'var(--accent-gold)' }}>Chính sách Tôn giáo & Dân tộc</span>
         </h1>
-        <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: '580px', margin: '0 auto' }}>
+        <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: '580px', margin: '0 auto 20px' }}>
           Quét mã QR bằng điện thoại hoặc nhập mã PIN phòng để tham gia trả lời câu hỏi và tranh tài trên bảng xếp hạng trực tiếp.
         </p>
+        <button
+          onClick={() => router.push('/practice')}
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
+            background: 'linear-gradient(135deg, #0284c7 0%, #0369a1 100%)',
+            color: '#ffffff',
+            fontWeight: '700',
+            fontSize: '0.95rem',
+            padding: '10px 24px',
+            borderRadius: '10px',
+            border: '1px solid rgba(56, 189, 248, 0.4)',
+            cursor: 'pointer',
+            boxShadow: '0 4px 12px rgba(2, 132, 199, 0.35)',
+          }}
+        >
+          Làm bài thi thử ngay (30 câu) <ArrowRight size={16} />
+        </button>
       </div>
 
       {/* 2 Main Action Cards */}

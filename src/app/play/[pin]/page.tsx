@@ -17,6 +17,7 @@ import {
   AlertCircle
 } from 'lucide-react';
 import { sounds } from '@/utils/audio';
+import QuestionCard from '@/components/QuestionCard';
 
 interface Question {
   id: number;
@@ -668,122 +669,25 @@ export default function PlayRoomPage() {
               </button>
             )}
           </div>
-        ) : answerResult && !answerResult.isCorrect ? (
-          // SUB-VIEW B: WRONG ANSWER PENALTY
-          <div className="glass-panel-elevated animate-pop-in" style={{ padding: '30px 20px', flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
-            <div style={{
-              width: '64px',
-              height: '64px',
-              borderRadius: '50%',
-              background: 'rgba(239, 68, 68, 0.2)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#ef4444',
-              marginBottom: '16px',
-            }}>
-              <XCircle size={36} />
-            </div>
-
-            <h3 style={{ fontSize: '1.5rem', color: '#f87171', marginBottom: '8px' }}>
-              Chưa Chính Xác!
-            </h3>
-
-            {answerResult.correctAnswerText && (
-              <div style={{
-                padding: '12px 18px',
-                background: 'rgba(16, 185, 129, 0.15)',
-                border: '1px solid rgba(16, 185, 129, 0.4)',
-                borderRadius: '12px',
-                color: '#6ee7b7',
-                fontWeight: '700',
-                fontSize: '0.95rem',
-                marginBottom: '16px',
-                width: '100%',
-              }}>
-                Đáp án đúng: {answerResult.correctAnswerText}
-              </div>
-            )}
-
-            <div style={{
-              background: 'rgba(0,0,0,0.3)',
-              padding: '14px',
-              borderRadius: '12px',
-              fontSize: '0.85rem',
-              color: 'var(--text-muted)',
-              marginBottom: '24px',
-              textAlign: 'left',
-              width: '100%',
-            }}>
-              <b style={{ color: 'var(--accent-gold)' }}>Giải thích học phần:</b> {answerResult.explanation}
-            </div>
-
-            <button
-              onClick={handleNextQuestion}
-              disabled={penaltySeconds > 0}
-              className="btn-primary"
-              style={{ width: '100%', padding: '16px' }}
-            >
-              {penaltySeconds > 0 ? `Đợi ${penaltySeconds}s để tiếp tục...` : 'LÀM CÂU TIẾP THEO'}
-            </button>
-          </div>
         ) : currentQuestion ? (
-          // SUB-VIEW C: ACTIVE QUESTION VIEW
-          <div className="glass-panel-elevated" style={{ padding: '24px 20px', flex: 1, display: 'flex', flexDirection: 'column' }}>
-            {/* Category & Counter */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-              <span style={{
-                padding: '4px 12px',
-                borderRadius: '20px',
-                background: 'rgba(230, 34, 56, 0.15)',
-                border: '1px solid rgba(230, 34, 56, 0.3)',
-                color: '#ff8595',
-                fontSize: '0.78rem',
-                fontWeight: '700',
-              }}>
-                {currentQuestion.category}
-              </span>
-
-              <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                Câu {questionIndex + 1}
-              </span>
-            </div>
-
-            {/* Question Text */}
-            <h2 style={{
-              fontSize: '1.25rem',
-              fontWeight: '800',
-              lineHeight: 1.45,
-              marginBottom: '24px',
-              minHeight: '60px',
-            }}>
-              {currentQuestion.question}
-            </h2>
-
-            {/* 4 Options Grid */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', flex: 1 }}>
-              {currentQuestion.options.map((opt, optIdx) => {
-                const letters = ['A', 'B', 'C', 'D'];
-                const isSelected = selectedOption === optIdx;
-
-                return (
-                  <button
-                    key={optIdx}
-                    onClick={() => handleSelectOption(optIdx)}
-                    disabled={isAnswering}
-                    className={`option-btn option-btn-${optIdx}`}
-                    style={{
-                      borderWidth: isSelected ? '3px' : '2px',
-                      transform: isSelected ? 'scale(1.02)' : undefined,
-                    }}
-                  >
-                    <span className="option-badge">{letters[optIdx]}</span>
-                    <span style={{ flex: 1, fontSize: '1rem', lineHeight: 1.35 }}>{opt}</span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
+          <QuestionCard
+            title={`Phòng #${pin}`}
+            questionIndex={questionIndex}
+            totalQuestions={totalQuestions}
+            questionText={currentQuestion.question}
+            options={currentQuestion.options}
+            selectedOption={selectedOption}
+            onSelectOption={handleSelectOption}
+            isAnswered={answerResult !== null && !answerResult.isCorrect}
+            isCorrect={answerResult ? answerResult.isCorrect : null}
+            correctAnswerText={answerResult?.correctAnswerText}
+            explanation={answerResult?.explanation}
+            countdownSeconds={penaltySeconds > 0 ? penaltySeconds : 180}
+            onNext={handleNextQuestion}
+            onClose={() => router.push('/')}
+            nextButtonText={penaltySeconds > 0 ? `Đợi ${penaltySeconds}s...` : 'Tiếp theo'}
+            disabled={isAnswering && answerResult === null}
+          />
         ) : (
           <div style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>
             Đang tải câu hỏi...

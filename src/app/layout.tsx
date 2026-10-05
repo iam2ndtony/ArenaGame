@@ -26,7 +26,22 @@ export default function RootLayout({
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⭐</text></svg>" />
       </head>
       <body>
-        <main className="min-h-screen">
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundImage: 'url(/background.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center center',
+            backgroundRepeat: 'no-repeat',
+            zIndex: -1,
+            pointerEvents: 'none',
+          }}
+        />
+        <main className="min-h-screen" style={{ position: 'relative', zIndex: 1 }}>
           {children}
         </main>
       </body>
