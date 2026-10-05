@@ -2,9 +2,9 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'MarxArena - Đấu Trường Trắc Nghiệm Mác - Lênin',
-  description: 'Trò chơi đấu trường quiz nhiều người chơi thời gian thực. Quét QR vào phòng tức thì, tranh tài kiến thức Mác - Lênin, mở rương bí mật và cướp điểm kịch tính!',
-  keywords: ['Mác Lênin', 'Triết học Mác Lênin', 'MLN131', 'Quiz nhiều người chơi', 'Blooket style', 'MarxArena'],
+  title: 'MarxArena - Đấu Trường Trắc Nghiệm Tôn Giáo & Dân Tộc',
+  description: 'Trò chơi đấu trường trắc nghiệm nhiều người chơi thời gian thực. Quét QR vào phòng tức thì, tranh tài kiến thức, mở rương bí mật và cướp điểm kịch tính!',
+  keywords: ['Trắc nghiệm tôn giáo', 'Chính sách tôn giáo', 'Quan hệ dân tộc tôn giáo', 'Quiz nhiều người chơi', 'Blooket style', 'MarxArena'],
   authors: [{ name: 'MarxArena Team' }],
 };
 
