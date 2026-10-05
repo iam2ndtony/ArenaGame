@@ -224,25 +224,27 @@ export default function HostRoomPage() {
     return (
       <div style={{ minHeight: '100vh', padding: '30px 40px', maxWidth: '1400px', margin: '0 auto' }}>
         {/* Top Header */}
-        <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+        <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '28px', paddingBottom: '16px', borderBottom: '1px solid var(--border-subtle)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <div style={{
-              width: '46px',
-              height: '46px',
-              borderRadius: '12px',
-              background: 'linear-gradient(135deg, #e62238 0%, #b31024 100%)',
+              width: '40px',
+              height: '40px',
+              borderRadius: '10px',
+              backgroundColor: 'var(--accent-red)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: '22px',
+              color: '#fff',
+              fontWeight: '800',
+              fontSize: '18px',
             }}>
-              ⭐
+              M
             </div>
             <div>
-              <h1 style={{ fontSize: '1.4rem', fontWeight: '900' }}>
-                MARX<span style={{ color: 'var(--accent-gold)' }}>ARENA</span> • SẢNH CHỜ MÁY CHIẾU
+              <h1 style={{ fontSize: '1.25rem', fontWeight: '800' }}>
+                MarxArena • Sảnh chờ trình chiếu
               </h1>
-              <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Mã phòng: <b style={{ color: 'var(--accent-gold)' }}>{pin}</b></p>
+              <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Mã phòng tham gia: <strong style={{ color: 'var(--accent-gold)' }}>{pin}</strong></p>
             </div>
           </div>
 
@@ -269,64 +271,64 @@ export default function HostRoomPage() {
         {/* Big Projector Showcase Banner */}
         <div style={{ display: 'grid', gridTemplateColumns: 'minmax(340px, 420px) 1fr', gap: '30px', alignItems: 'start' }}>
           {/* QR Code & Join Card */}
-          <div className="glass-panel-elevated" style={{ padding: '30px', textAlign: 'center', position: 'relative' }}>
+          <div className="glass-panel" style={{ padding: '28px', textAlign: 'center' }}>
             <div style={{
               display: 'inline-block',
-              padding: '6px 14px',
-              background: 'rgba(255, 199, 44, 0.15)',
-              border: '1px solid rgba(255, 199, 44, 0.3)',
-              borderRadius: '20px',
-              color: 'var(--accent-gold-bright)',
-              fontSize: '0.85rem',
-              fontWeight: '700',
+              padding: '5px 12px',
+              backgroundColor: '#1e293b',
+              border: '1px solid var(--border-subtle)',
+              borderRadius: '6px',
+              color: 'var(--accent-gold)',
+              fontSize: '0.8rem',
+              fontWeight: '600',
               marginBottom: '16px',
             }}>
-              📱 QUÉT CAMERA ĐỂ VÀO PHÒNG
+              QUÉT MÃ QR BẰNG CAMERA ĐIỆN THOẠI
             </div>
 
             <div style={{
-              background: 'white',
-              padding: '16px',
-              borderRadius: '20px',
+              background: '#ffffff',
+              padding: '12px',
+              borderRadius: '12px',
               display: 'inline-block',
-              boxShadow: '0 0 40px rgba(255, 255, 255, 0.2)',
-              marginBottom: '20px',
+              marginBottom: '18px',
+              border: '1px solid var(--border-subtle)',
             }}>
               {qrDataUrl ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
                   src={qrDataUrl}
                   alt={`Mã QR phòng ${pin}`}
-                  style={{ width: '280px', height: '280px', display: 'block' }}
+                  style={{ width: '260px', height: '260px', display: 'block' }}
                 />
               ) : (
-                <div style={{ width: '280px', height: '280px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#666' }}>
+                <div style={{ width: '260px', height: '260px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#64748b' }}>
                   Đang tạo mã QR...
                 </div>
               )}
             </div>
 
             <div style={{ marginBottom: '16px' }}>
-              <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginBottom: '4px' }}>HOẶC TRUY CẬP WEBSITE NHẬP MÃ PIN:</div>
+              <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '4px' }}>HOẶC TRUY CẬP WEBSITE NHẬP MÃ PIN:</div>
               <div style={{
-                fontSize: '3.4rem',
-                fontFamily: 'var(--font-heading)',
-                fontWeight: '900',
+                fontSize: '3rem',
+                fontFamily: 'var(--font-family)',
+                fontWeight: '800',
                 letterSpacing: '0.12em',
-                color: 'var(--accent-gold-bright)',
-                textShadow: '0 0 20px rgba(255, 199, 44, 0.5)',
-                lineHeight: 1,
+                color: 'var(--accent-gold)',
+                lineHeight: 1.1,
               }}>
                 {pin}
               </div>
             </div>
 
             <div style={{
-              padding: '10px 16px',
-              background: 'rgba(0,0,0,0.3)',
-              borderRadius: '10px',
-              fontSize: '0.82rem',
-              color: 'var(--text-dim)',
+              padding: '8px 12px',
+              background: 'var(--bg-input)',
+              border: '1px solid var(--border-subtle)',
+              borderRadius: '6px',
+              fontSize: '0.8rem',
+              color: 'var(--text-muted)',
               wordBreak: 'break-all',
             }}>
               {joinUrl || `http://${networkIp}:3000/play/${pin}`}
@@ -455,19 +457,21 @@ export default function HostRoomPage() {
               width: '42px',
               height: '42px',
               borderRadius: '10px',
-              background: 'linear-gradient(135deg, #e62238 0%, #b31024 100%)',
+              backgroundColor: 'var(--accent-red)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: '20px',
+              color: '#fff',
+              fontWeight: '800',
+              fontSize: '18px',
             }}>
-              ⭐
+              M
             </div>
             <div>
-              <h1 style={{ fontSize: '1.3rem', fontWeight: '900' }}>
-                MARX<span style={{ color: 'var(--accent-gold)' }}>ARENA</span> • ĐẠI CHIẾN MỞ RƯƠNG
+              <h1 style={{ fontSize: '1.25rem', fontWeight: '800' }}>
+                MarxArena • Đang diễn ra trận đấu
               </h1>
-              <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Mã phòng: {pin} • {players.length} người chơi</p>
+              <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Mã phòng: {pin} • {players.length} người chơi tham gia</p>
             </div>
           </div>
 
@@ -475,56 +479,55 @@ export default function HostRoomPage() {
           <div style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '12px',
-            padding: '10px 24px',
-            borderRadius: '16px',
-            background: isUrgent
-              ? 'rgba(230, 34, 56, 0.3)'
+            gap: '10px',
+            padding: '8px 20px',
+            borderRadius: '10px',
+            backgroundColor: isUrgent
+              ? '#7f1d1d'
               : isWarning
-              ? 'rgba(245, 158, 11, 0.2)'
-              : 'rgba(255, 255, 255, 0.08)',
+              ? '#78350f'
+              : '#1e293b',
             border: isUrgent
-              ? '2px solid #e62238'
+              ? '1px solid #ef4444'
               : isWarning
-              ? '2px solid #f59e0b'
-              : '1px solid rgba(255, 255, 255, 0.2)',
-            boxShadow: isUrgent ? '0 0 30px rgba(230, 34, 56, 0.6)' : 'none',
+              ? '1px solid #f59e0b'
+              : '1px solid var(--border-subtle)',
           }}>
-            <Clock size={24} color={isUrgent ? '#ef4444' : isWarning ? '#f59e0b' : 'var(--accent-gold)'} />
+            <Clock size={20} color={isUrgent ? '#fca5a5' : isWarning ? '#fde047' : 'var(--accent-gold)'} />
             <div style={{
-              fontSize: '2rem',
-              fontFamily: 'var(--font-heading)',
-              fontWeight: '900',
-              letterSpacing: '0.05em',
-              color: isUrgent ? '#ff8595' : isWarning ? '#fcd34d' : 'white',
+              fontSize: '1.8rem',
+              fontFamily: 'var(--font-family)',
+              fontWeight: '800',
+              letterSpacing: '0.04em',
+              color: isUrgent ? '#fca5a5' : isWarning ? '#fef08a' : '#ffffff',
             }}>
               {formatTime(remainingTime)}
             </div>
           </div>
 
-          <div style={{ display: 'flex', gap: '10px' }}>
+          <div style={{ display: 'flex', gap: '8px' }}>
             <button onClick={toggleSound} className="btn-ghost" style={{ padding: '8px 14px' }}>
               {soundEnabled ? <Volume2 size={16} /> : <VolumeX size={16} />}
             </button>
-            <button onClick={handleEndGameEarly} className="btn-ghost" style={{ color: '#fca5a5', borderColor: 'rgba(239, 68, 68, 0.3)' }}>
+            <button onClick={handleEndGameEarly} className="btn-ghost" style={{ color: '#fca5a5', borderColor: '#7f1d1d' }}>
               Kết Thúc Sớm
             </button>
           </div>
         </header>
 
         {/* Main Grid: Live Leaderboard + Live Event Ticker */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 380px', gap: '24px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 360px', gap: '24px' }}>
           {/* Left Column: Live Leaderboard */}
-          <div className="glass-panel-elevated" style={{ padding: '26px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <Trophy size={22} color="var(--accent-gold)" />
-                <h2 style={{ fontSize: '1.4rem' }}>Bảng Xếp Hạng Trực Tiếp</h2>
+          <div className="glass-panel" style={{ padding: '24px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '18px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Trophy size={20} color="var(--accent-gold)" />
+                <h2 style={{ fontSize: '1.25rem', fontWeight: '700' }}>Bảng Xếp Hạng Trực Tiếp</h2>
               </div>
-              <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Cập nhật theo thời gian thực</span>
+              <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Cập nhật theo thời gian thực</span>
             </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
               {players.slice(0, 10).map((p, idx) => {
                 const avatar = getAvatar(p.avatar);
                 const isTop1 = idx === 0 && p.score > 0;
@@ -538,59 +541,64 @@ export default function HostRoomPage() {
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'space-between',
-                      padding: '14px 20px',
-                      borderRadius: '16px',
-                      background: isTop1
-                        ? 'linear-gradient(90deg, rgba(255, 199, 44, 0.22) 0%, rgba(255, 199, 44, 0.05) 100%)'
+                      padding: '12px 18px',
+                      borderRadius: '10px',
+                      backgroundColor: isTop1
+                        ? '#1e241c'
                         : isTop2
-                        ? 'linear-gradient(90deg, rgba(203, 213, 225, 0.16) 0%, rgba(203, 213, 225, 0.04) 100%)'
+                        ? '#1e2330'
                         : isTop3
-                        ? 'linear-gradient(90deg, rgba(217, 119, 6, 0.16) 0%, rgba(217, 119, 6, 0.04) 100%)'
-                        : 'rgba(255, 255, 255, 0.03)',
+                        ? '#241e17'
+                        : 'var(--bg-card)',
                       border: isTop1
-                        ? '2px solid var(--accent-gold)'
+                        ? '1px solid #ca8a04'
                         : isTop2
-                        ? '1px solid #cbd5e1'
+                        ? '1px solid #64748b'
                         : isTop3
-                        ? '1px solid #d97706'
-                        : '1px solid rgba(255, 255, 255, 0.08)',
-                      transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                        ? '1px solid #b45309'
+                        : '1px solid var(--border-subtle)',
+                      borderLeft: isTop1
+                        ? '4px solid #facc15'
+                        : isTop2
+                        ? '4px solid #cbd5e1'
+                        : isTop3
+                        ? '4px solid #f59e0b'
+                        : '1px solid var(--border-subtle)',
                     }}
                   >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
                       <div style={{
-                        width: '36px',
-                        height: '36px',
-                        borderRadius: '10px',
-                        background: isTop1 ? '#ffc72c' : isTop2 ? '#cbd5e1' : isTop3 ? '#d97706' : 'rgba(255, 255, 255, 0.1)',
-                        color: isTop1 ? '#111' : isTop2 ? '#111' : 'white',
-                        fontWeight: '900',
-                        fontSize: '1.1rem',
+                        width: '32px',
+                        height: '32px',
+                        borderRadius: '6px',
+                        backgroundColor: isTop1 ? '#ca8a04' : isTop2 ? '#64748b' : isTop3 ? '#92400e' : '#1e293b',
+                        color: '#ffffff',
+                        fontWeight: '800',
+                        fontSize: '0.95rem',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        fontFamily: 'var(--font-heading)',
                       }}>
                         {idx + 1}
                       </div>
 
-                      <div style={{ fontSize: '24px' }}>{avatar.emoji}</div>
+                      <div style={{ fontSize: '22px' }}>{avatar.emoji}</div>
 
                       <div>
-                        <div style={{ fontWeight: '800', fontSize: '1.15rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <div style={{ fontWeight: '700', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '6px' }}>
                           {p.name}
                           {p.shieldActive && (
                             <span title="Đang bật khiên bảo vệ" style={{ color: '#38bdf8' }}>
-                              <Shield size={16} />
+                              <Shield size={14} />
                             </span>
                           )}
                           {p.streak >= 3 && (
-                            <span style={{ fontSize: '0.75rem', background: 'rgba(230, 34, 56, 0.2)', color: '#ff6b6b', padding: '2px 8px', borderRadius: '10px', display: 'inline-flex', alignItems: 'center', gap: '2px' }}>
-                              <Flame size={12} /> {p.streak} Chuỗi
+                            <span style={{ fontSize: '0.75rem', backgroundColor: '#7f1d1d', color: '#fecaca', padding: '1px 6px', borderRadius: '4px', display: 'inline-flex', alignItems: 'center', gap: '2px' }}>
+                              <Flame size={10} /> {p.streak}
                             </span>
                           )}
                         </div>
-                        <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                        <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)' }}>
                           Đúng: {p.correctCount} • Sai: {p.wrongCount}
                         </div>
                       </div>
@@ -598,12 +606,11 @@ export default function HostRoomPage() {
 
                     <div style={{ textAlign: 'right' }}>
                       <div style={{
-                        fontSize: '1.6rem',
-                        fontWeight: '900',
-                        color: isTop1 ? 'var(--accent-gold-bright)' : 'white',
-                        fontFamily: 'var(--font-heading)',
+                        fontSize: '1.35rem',
+                        fontWeight: '800',
+                        color: isTop1 ? 'var(--accent-gold)' : '#ffffff',
                       }}>
-                        {p.score.toLocaleString()} <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>đ</span>
+                        {p.score.toLocaleString()} <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>đ</span>
                       </div>
                     </div>
                   </div>
@@ -611,6 +618,7 @@ export default function HostRoomPage() {
               })}
             </div>
           </div>
+
 
           {/* Right Column: Live Event Ticker (Tường thuật cướp điểm, mở rương) */}
           <div className="glass-panel" style={{ padding: '24px', display: 'flex', flexDirection: 'column' }}>
@@ -663,27 +671,27 @@ export default function HostRoomPage() {
   // ----------------- RENDER: ENDED STATE (PODIUM & RESULTS) -----------------
   return (
     <div style={{ minHeight: '100vh', padding: '40px 30px', maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
-      <div style={{ marginBottom: '30px' }}>
+      <div style={{ marginBottom: '28px' }}>
         <div style={{
           display: 'inline-flex',
           alignItems: 'center',
           gap: '8px',
-          padding: '6px 20px',
-          background: 'rgba(255, 199, 44, 0.15)',
-          border: '1px solid rgba(255, 199, 44, 0.3)',
-          borderRadius: '30px',
-          color: 'var(--accent-gold-bright)',
-          fontSize: '0.9rem',
-          fontWeight: '700',
-          marginBottom: '14px',
+          padding: '6px 16px',
+          backgroundColor: '#1e293b',
+          border: '1px solid var(--border-subtle)',
+          borderRadius: '20px',
+          color: 'var(--accent-gold)',
+          fontSize: '0.85rem',
+          fontWeight: '600',
+          marginBottom: '12px',
         }}>
-          <Trophy size={18} /> KẾT THÚC TRẬN ĐẤU • VINH DANH CHIẾN BINH
+          <Trophy size={16} /> KẾT THÚC VÁN ĐẤU • TỔNG KẾT XẾP HẠNG
         </div>
-        <h1 style={{ fontSize: '2.8rem', fontWeight: '900', marginBottom: '8px' }}>
-          BẢNG VÀNG DANH DỰ MÁC - LÊNIN
+        <h1 style={{ fontSize: '2.2rem', fontWeight: '800', marginBottom: '8px' }}>
+          Bảng Xếp Hạng Chung Cuộc
         </h1>
-        <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem' }}>
-          Chúc mừng tất cả các đồng chí đã xuất sắc hoàn thành buổi tranh tài!
+        <p style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}>
+          Tổng kết kết quả thi đấu chuyên đề Chính sách tôn giáo & Dân tộc
         </p>
       </div>
 
@@ -692,38 +700,38 @@ export default function HostRoomPage() {
         display: 'flex',
         alignItems: 'flex-end',
         justifyContent: 'center',
-        gap: '24px',
-        margin: '50px 0 60px',
+        gap: '20px',
+        margin: '40px 0 50px',
       }}>
         {/* Rank 2 (Silver) */}
         {podium[1] && (
           <div className="podium-column animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            <div style={{ fontSize: '2.5rem', marginBottom: '6px' }}>{getAvatar(podium[1].avatar).emoji}</div>
-            <div style={{ fontWeight: '800', fontSize: '1.1rem', marginBottom: '2px' }}>{podium[1].name}</div>
-            <div style={{ color: 'var(--accent-gold)', fontWeight: '800', fontSize: '1.2rem', marginBottom: '12px' }}>
+            <div style={{ fontSize: '2.2rem', marginBottom: '4px' }}>{getAvatar(podium[1].avatar).emoji}</div>
+            <div style={{ fontWeight: '700', fontSize: '1.05rem', marginBottom: '2px' }}>{podium[1].name}</div>
+            <div style={{ color: 'var(--accent-gold)', fontWeight: '700', fontSize: '1.15rem', marginBottom: '10px' }}>
               {podium[1].score.toLocaleString()} đ
             </div>
             <div className="podium-box-2">
-              <span style={{ fontSize: '2.5rem', fontWeight: '900', color: '#1e293b' }}>2</span>
-              <span style={{ fontSize: '0.85rem', fontWeight: '800', color: '#334155' }}>HUY CHƯƠNG BẠC</span>
+              <span style={{ fontSize: '2.2rem', fontWeight: '800', color: '#f8fafc' }}>2</span>
+              <span style={{ fontSize: '0.8rem', fontWeight: '700', color: '#cbd5e1' }}>HUY CHƯƠNG BẠC</span>
             </div>
           </div>
         )}
 
         {/* Rank 1 (Gold) */}
         {podium[0] && (
-          <div className="podium-column animate-slide-up" style={{ width: '160px' }}>
-            <div style={{ fontSize: '1.5rem', marginBottom: '2px' }}>👑</div>
-            <div style={{ fontSize: '3.2rem', marginBottom: '6px' }}>{getAvatar(podium[0].avatar).emoji}</div>
-            <div style={{ fontWeight: '900', fontSize: '1.3rem', color: 'var(--accent-gold-bright)', marginBottom: '2px' }}>
+          <div className="podium-column animate-slide-up" style={{ width: '150px' }}>
+            <div style={{ fontSize: '1.4rem', marginBottom: '2px' }}>👑</div>
+            <div style={{ fontSize: '2.8rem', marginBottom: '4px' }}>{getAvatar(podium[0].avatar).emoji}</div>
+            <div style={{ fontWeight: '800', fontSize: '1.2rem', color: 'var(--accent-gold)', marginBottom: '2px' }}>
               {podium[0].name}
             </div>
-            <div style={{ color: 'white', fontWeight: '900', fontSize: '1.4rem', marginBottom: '12px' }}>
+            <div style={{ color: '#ffffff', fontWeight: '800', fontSize: '1.3rem', marginBottom: '10px' }}>
               {podium[0].score.toLocaleString()} đ
             </div>
             <div className="podium-box-1">
-              <span style={{ fontSize: '3.5rem', fontWeight: '900', color: '#111' }}>1</span>
-              <span style={{ fontSize: '0.9rem', fontWeight: '900', color: '#111' }}>QUÁN QU N VÀNG</span>
+              <span style={{ fontSize: '3rem', fontWeight: '800', color: '#111827' }}>1</span>
+              <span style={{ fontSize: '0.85rem', fontWeight: '800', color: '#111827' }}>QUÁN QUÂN</span>
             </div>
           </div>
         )}
@@ -731,14 +739,14 @@ export default function HostRoomPage() {
         {/* Rank 3 (Bronze) */}
         {podium[2] && (
           <div className="podium-column animate-slide-up" style={{ animationDelay: '0.4s' }}>
-            <div style={{ fontSize: '2.5rem', marginBottom: '6px' }}>{getAvatar(podium[2].avatar).emoji}</div>
-            <div style={{ fontWeight: '800', fontSize: '1.1rem', marginBottom: '2px' }}>{podium[2].name}</div>
-            <div style={{ color: 'var(--accent-gold)', fontWeight: '800', fontSize: '1.2rem', marginBottom: '12px' }}>
+            <div style={{ fontSize: '2.2rem', marginBottom: '4px' }}>{getAvatar(podium[2].avatar).emoji}</div>
+            <div style={{ fontWeight: '700', fontSize: '1.05rem', marginBottom: '2px' }}>{podium[2].name}</div>
+            <div style={{ color: 'var(--accent-gold)', fontWeight: '700', fontSize: '1.15rem', marginBottom: '10px' }}>
               {podium[2].score.toLocaleString()} đ
             </div>
             <div className="podium-box-3">
-              <span style={{ fontSize: '2.5rem', fontWeight: '900', color: '#451a03' }}>3</span>
-              <span style={{ fontSize: '0.8rem', fontWeight: '800', color: '#451a03' }}>HUY CHƯƠNG ĐỒNG</span>
+              <span style={{ fontSize: '2.2rem', fontWeight: '800', color: '#fef3c7' }}>3</span>
+              <span style={{ fontSize: '0.78rem', fontWeight: '700', color: '#fef3c7' }}>HUY CHƯƠNG ĐỒNG</span>
             </div>
           </div>
         )}

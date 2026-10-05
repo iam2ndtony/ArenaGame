@@ -35,12 +35,53 @@ function getLocalIpAddress() {
 
 const localIp = getLocalIpAddress();
 
+// Helper to normalize questions from various JSON formats
+function normalizeQuestions(rawData) {
+  let list = [];
+  if (Array.isArray(rawData)) {
+    list = rawData;
+  } else if (rawData && typeof rawData === 'object' && Array.isArray(rawData.questions)) {
+    list = rawData.questions;
+  }
+
+  return list.map((q, idx) => {
+    let optionsArray = [];
+    let correctIdx = 0;
+
+    if (q.options && typeof q.options === 'object' && !Array.isArray(q.options)) {
+      const keys = ['A', 'B', 'C', 'D'];
+      optionsArray = keys.map((k) => q.options[k] || '');
+    } else if (Array.isArray(q.options)) {
+      optionsArray = q.options;
+    }
+
+    if (typeof q.answer === 'string') {
+      const char = q.answer.trim().toUpperCase();
+      const map = { A: 0, B: 1, C: 2, D: 3 };
+      correctIdx = map[char] !== undefined ? map[char] : 0;
+    } else if (typeof q.correctIndex === 'number') {
+      correctIdx = q.correctIndex;
+    }
+
+    const letters = ['A', 'B', 'C', 'D'];
+    return {
+      id: q.id || idx + 1,
+      category: q.category || 'Chủ nghĩa xã hội khoa học',
+      question: q.question,
+      options: optionsArray,
+      correctIndex: correctIdx,
+      explanation: q.explanation || `Đáp án đúng là ${letters[correctIdx]}: ${optionsArray[correctIdx] || ''}`,
+    };
+  });
+}
+
 // Load default questions
 let defaultQuestions = [];
 try {
   const qPath = path.join(__dirname, 'src', 'data', 'questions.json');
   if (fs.existsSync(qPath)) {
-    defaultQuestions = JSON.parse(fs.readFileSync(qPath, 'utf-8'));
+    const raw = JSON.parse(fs.readFileSync(qPath, 'utf-8'));
+    defaultQuestions = normalizeQuestions(raw);
   }
 } catch (err) {
   console.error('Error reading default questions:', err);
@@ -115,8 +156,8 @@ app.prepare().then(() => {
     // ----------------- HOST EVENTS -----------------
     socket.on('host:create_room', ({ duration = 300, questions = null } = {}, callback) => {
       const pin = generatePin();
-      const roomQuestions = questions && Array.isArray(questions) && questions.length > 0
-        ? questions
+      const roomQuestions = questions
+        ? normalizeQuestions(questions)
         : defaultQuestions;
 
       const room = {

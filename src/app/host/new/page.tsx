@@ -32,12 +32,13 @@ export default function NewHostRoomPage() {
     reader.onload = (event) => {
       try {
         const parsed = JSON.parse(event.target?.result as string);
-        if (Array.isArray(parsed) && parsed.length > 0) {
+        const list = Array.isArray(parsed) ? parsed : (parsed?.questions || null);
+        if (Array.isArray(list) && list.length > 0) {
           setCustomQuestions(parsed);
-          setQuestionCount(parsed.length);
-          alert(`Đã tải thành công ${parsed.length} câu hỏi tùy chỉnh!`);
+          setQuestionCount(list.length);
+          alert(`Đã tải thành công ${list.length} câu hỏi tùy chỉnh!`);
         } else {
-          alert('File JSON phải chứa danh sách mảng các câu hỏi!');
+          alert('File JSON phải chứa danh sách mảng các câu hỏi hoặc cấu trúc { questions: [...] }!');
         }
       } catch {
         alert('File không đúng định dạng JSON hợp lệ!');
@@ -49,13 +50,14 @@ export default function NewHostRoomPage() {
   const handleApplyJsonText = () => {
     try {
       const parsed = JSON.parse(jsonText);
-      if (Array.isArray(parsed) && parsed.length > 0) {
+      const list = Array.isArray(parsed) ? parsed : (parsed?.questions || null);
+      if (Array.isArray(list) && list.length > 0) {
         setCustomQuestions(parsed);
-        setQuestionCount(parsed.length);
+        setQuestionCount(list.length);
         setShowQuestionModal(false);
-        alert(`Đã nạp ${parsed.length} câu hỏi thành công!`);
+        alert(`Đã nạp ${list.length} câu hỏi thành công!`);
       } else {
-        alert('Vui lòng nhập định dạng mảng JSON các câu hỏi!');
+        alert('Vui lòng nhập định dạng JSON hợp lệ chứa danh sách câu hỏi!');
       }
     } catch {
       alert('Cú pháp JSON không hợp lệ, vui lòng kiểm tra lại!');
@@ -228,25 +230,25 @@ export default function NewHostRoomPage() {
           zIndex: 9999,
         }}>
           <div className="glass-panel-elevated" style={{ width: '100%', maxWidth: '640px', padding: '30px' }}>
-            <h3 style={{ fontSize: '1.3rem', marginBottom: '10px' }}>Nhập hoặc Dán Bộ Câu Hỏi (JSON)</h3>
-            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '14px' }}>
-              Mỗi câu hỏi cần có các trường: <code>category</code>, <code>question</code>, <code>options</code> (mảng 4 đáp án), <code>correctIndex</code> (0-3), và <code>explanation</code>.
+            <h3 style={{ fontSize: '1.25rem', marginBottom: '8px' }}>Nhập hoặc Dán Bộ Câu Hỏi (JSON)</h3>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '14px' }}>
+              Hỗ trợ định dạng chuẩn với <code>title</code>, <code>questions</code> (mỗi câu gồm <code>question</code>, <code>options</code> dạng object &#123; &quot;A&quot;: ..., &quot;B&quot;: ... &#125;, và <code>answer</code>: &quot;A&quot;|&quot;B&quot;|&quot;C&quot;|&quot;D&quot;).
             </p>
 
             <textarea
-              rows={10}
-              placeholder={`[\n  {\n    "category": "Triết học",\n    "question": "Vấn đề cơ bản của triết học là gì?",\n    "options": ["A", "B", "C", "D"],\n    "correctIndex": 0,\n    "explanation": "Giải thích chi tiết..."\n  }\n]`}
+              rows={11}
+              placeholder={`{\n  "title": "BỘ CÂU HỎI TRẮC NGHIỆM...",\n  "description": "...",\n  "total_questions": 30,\n  "questions": [\n    {\n      "id": 1,\n      "type": "multiple_choice",\n      "question": "Nội dung câu hỏi...",\n      "options": {\n        "A": "Đáp án A",\n        "B": "Đáp án B",\n        "C": "Đáp án C",\n        "D": "Đáp án D"\n      },\n      "answer": "B"\n    }\n  ]\n}`}
               value={jsonText}
               onChange={(e) => setJsonText(e.target.value)}
               style={{
                 width: '100%',
-                background: 'rgba(0,0,0,0.6)',
-                border: '1px solid var(--border-glass)',
-                borderRadius: '12px',
+                background: 'var(--bg-input)',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: '8px',
                 color: '#e2e8f0',
                 padding: '12px',
                 fontFamily: 'monospace',
-                fontSize: '0.85rem',
+                fontSize: '0.82rem',
                 outline: 'none',
                 marginBottom: '16px',
               }}

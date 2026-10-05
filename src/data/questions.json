@@ -1,392 +1,367 @@
-[
-  {
-    "id": 1,
-    "category": "Triết học Mác - Lênin",
-    "question": "Vấn đề cơ bản của triết học là gì?",
-    "options": [
-      "Mối quan hệ giữa tư duy và tồn tại (giữa ý thức và vật chất)",
-      "Mối quan hệ giữa tự nhiên và xã hội",
-      "Vấn đề nguồn gốc của vũ trụ và muôn loài",
-      "Vấn đề phương pháp nhận thức thế giới"
-    ],
-    "correctIndex": 0,
-    "explanation": "Theo Ăngghen, vấn đề cơ bản lớn của mọi triết học, đặc biệt là triết học hiện đại, là vấn đề quan hệ giữa tư duy với tồn tại."
-  },
-  {
-    "id": 2,
-    "category": "Triết học Mác - Lênin",
-    "question": "Định nghĩa vật chất kinh điển của V.I. Lênin được nêu trong tác phẩm nào?",
-    "options": [
-      "Chủ nghĩa duy vật và chủ nghĩa kinh nghiệm phê phán",
-      "Bút ký triết học",
-      "Nhà nước và cách mạng",
-      "Ba nguồn gốc và ba bộ phận cấu thành chủ nghĩa Mác"
-    ],
-    "correctIndex": 0,
-    "explanation": "Lênin đưa ra định nghĩa vật chất nổi tiếng trong tác phẩm 'Chủ nghĩa duy vật và chủ nghĩa kinh nghiệm phê phán' (1909)."
-  },
-  {
-    "id": 3,
-    "category": "Triết học Mác - Lênin",
-    "question": "Theo quan điểm duy vật biện chứng, thuộc tính phổ biến nhất của mọi dạng vật chất là gì?",
-    "options": [
-      "Tồn tại khách quan ở ngoài và độc lập với ý thức con người",
-      "Có khối lượng và kích thước đo đếm được",
-      "Luôn đứng im và bất biến",
-      "Chỉ tồn tại trong tư duy trừu tượng"
-    ],
-    "correctIndex": 0,
-    "explanation": "Vật chất là thực tại khách quan, đem lại cho con người trong cảm giác, tồn tại không lệ thuộc vào cảm giác."
-  },
-  {
-    "id": 4,
-    "category": "Triết học Mác - Lênin",
-    "question": "Quy luật nào chỉ ra NGUỒN GỐC và ĐỘNG LỰC cơ bản của sự vận động và phát triển?",
-    "options": [
-      "Quy luật thống nhất và đấu tranh giữa các mặt đối lập (Quy luật mâu thuẫn)",
-      "Quy luật chuyển hóa từ những thay đổi về lượng dẫn đến thay đổi về chất",
-      "Quy luật phủ định của phủ định",
-      "Quy luật giá trị thặng dư"
-    ],
-    "correctIndex": 0,
-    "explanation": "Quy luật mâu thuẫn là 'hạt nhân' của phép biện chứng, vạch ra nguồn gốc, động lực bên trong của mọi sự vận động, phát triển."
-  },
-  {
-    "id": 5,
-    "category": "Triết học Mác - Lênin",
-    "question": "Quy luật chuyển hóa từ những thay đổi về lượng thành những thay đổi về chất chỉ ra điều gì?",
-    "options": [
-      "CÁCH THỨC của sự vận động và phát triển",
-      "Nguồn gốc của sự phát triển",
-      "Khuynh hướng của sự phát triển",
-      "Bản chất của nhận thức"
-    ],
-    "correctIndex": 0,
-    "explanation": "Lượng đổi dẫn đến chất đổi chỉ ra phương thức, cách thức mà sự vật phát triển."
-  },
-  {
-    "id": 6,
-    "category": "Triết học Mác - Lênin",
-    "question": "Quy luật phủ định của phủ định chỉ ra đặc trưng nào của sự phát triển?",
-    "options": [
-      "KHUYNH HƯỚNG phát triển theo đường xoáy ốc tiến lên",
-      "Động lực của sự phát triển",
-      "Tốc độ cố định của lịch sử",
-      "Sự tuần hoàn khép kín quay về điểm xuất phát"
-    ],
-    "correctIndex": 0,
-    "explanation": "Khuynh hướng phát triển diễn ra theo đường xoắn ốc: kế thừa cái tích cực của cái cũ và tiến lên trình độ cao hơn."
-  },
-  {
-    "id": 7,
-    "category": "Triết học Mác - Lênin",
-    "question": "Phạm trù nào chỉ giới hạn mà trong đó sự thay đổi về lượng chưa làm thay đổi căn bản về chất?",
-    "options": [
-      "Độ",
-      "Điểm nút",
-      "Bước nhảy",
-      "Thuộc tính"
-    ],
-    "correctIndex": 0,
-    "explanation": "Độ là khoảng giới hạn mà tại đó sự thay đổi về lượng chưa làm thay đổi căn bản về chất của sự vật."
-  },
-  {
-    "id": 8,
-    "category": "Triết học Mác - Lênin",
-    "question": "Theo chủ nghĩa duy vật lịch sử, yếu tố nào giữ vai trò quyết định sự phát triển của xã hội?",
-    "options": [
-      "Phương thức sản xuất vật chất",
-      "Điều kiện địa lý và khí hậu",
-      "Ý chí của các vĩ nhân lịch sử",
-      "Tôn giáo và đạo đức xã hội"
-    ],
-    "correctIndex": 0,
-    "explanation": "Sản xuất của cải vật chất là cơ sở của sự tồn tại và phát triển của xã hội loài người; phương thức sản xuất quyết định sự phát triển xã hội."
-  },
-  {
-    "id": 9,
-    "category": "Triết học Mác - Lênin",
-    "question": "Quan hệ sản xuất bao gồm mấy mặt cấu thành?",
-    "options": [
-      "3 mặt (sở hữu tư liệu sản xuất, tổ chức quản lý, phân phối sản phẩm)",
-      "2 mặt (người lao động và tư liệu lao động)",
-      "4 mặt (sản xuất, lưu thông, trao đổi, tiêu dùng)",
-      "5 mặt hình thái kinh tế - xã hội"
-    ],
-    "correctIndex": 0,
-    "explanation": "Quan hệ sản xuất gồm: Quan hệ sở hữu đối với tư liệu sản xuất, quan hệ trong tổ chức quản lý sản xuất, và quan hệ trong phân phối sản phẩm."
-  },
-  {
-    "id": 10,
-    "category": "Triết học Mác - Lênin",
-    "question": "Quy luật xã hội nào là quy luật phổ biến tác động trong toàn bộ tiến trình lịch sử nhân loại?",
-    "options": [
-      "Quy luật quan hệ sản xuất phù hợp với trình độ phát triển của lực lượng sản xuất",
-      "Quy luật đấu tranh giai cấp",
-      "Quy luật giá trị",
-      "Quy luật cạnh tranh tự do"
-    ],
-    "correctIndex": 0,
-    "explanation": "Sự phù hợp của quan hệ sản xuất với trình độ phát triển của lực lượng sản xuất là quy luật cơ bản chi phối mọi hình thái kinh tế - xã hội."
-  },
-  {
-    "id": 11,
-    "category": "Kinh tế chính trị Mác - Lênin",
-    "question": "Hàng hóa có hai thuộc tính cơ bản là gì?",
-    "options": [
-      "Giá trị sử dụng và Giá trị",
-      "Giá cả và Giá trị trao đổi",
-      "Công dụng và Vẻ đẹp",
-      "Chi phí và Lợi nhuận"
-    ],
-    "correctIndex": 0,
-    "explanation": "Hàng hóa là sản phẩm của lao động, có thể thỏa mãn nhu cầu nào đó của con người thông qua trao đổi; có 2 thuộc tính: giá trị sử dụng và giá trị."
-  },
-  {
-    "id": 12,
-    "category": "Kinh tế chính trị Mác - Lênin",
-    "question": "Lượng giá trị của một đơn vị hàng hóa được đo lường bằng đại lượng nào?",
-    "options": [
-      "Thời gian lao động xã hội cần thiết",
-      "Thời gian lao động cá biệt của người sản xuất",
-      "Số lượng nguyên vật liệu tiêu hao",
-      "Giá bán niêm yết trên thị trường"
-    ],
-    "correctIndex": 0,
-    "explanation": "Lượng giá trị của hàng hóa được xác định bởi lượng lao động tiêu hao để sản xuất ra hàng hóa đó, tính bằng thời gian lao động xã hội cần thiết."
-  },
-  {
-    "id": 13,
-    "category": "Kinh tế chính trị Mác - Lênin",
-    "question": "Giá trị thặng dư (m) theo Các Mác là phần giá trị do ai tạo ra?",
-    "options": [
-      "Do công nhân làm thuê tạo ra ngoài thời gian lao động tất yếu",
-      "Do máy móc hiện đại sinh ra trong quá trình vận hành",
-      "Do nhà tư bản đóng góp bằng trí tuệ quản lý",
-      "Do sự may mắn trong quá trình buôn bán lưu thông"
-    ],
-    "correctIndex": 0,
-    "explanation": "Giá trị thặng dư là bộ phận giá trị mới dôi ra ngoài giá trị sức lao động do công nhân làm thuê tạo ra và bị nhà tư bản chiếm đoạt không công."
-  },
-  {
-    "id": 14,
-    "category": "Kinh tế chính trị Mác - Lênin",
-    "question": "Tư bản bất biến (ký hiệu là c) là bộ phận tư bản dùng để mua yếu tố nào?",
-    "options": [
-      "Tư liệu sản xuất (nhà xưởng, máy móc, nguyên vật liệu)",
-      "Sức lao động của công nhân",
-      "Bản quyền phát minh sáng chế",
-      "Cổ phiếu và trái phiếu công ty"
-    ],
-    "correctIndex": 0,
-    "explanation": "Tư bản bất biến (c) tồn tại dưới hình thái tư liệu sản xuất mà giá trị của nó được bảo tồn và chuyển nguyên vẹn vào sản phẩm mới."
-  },
-  {
-    "id": 15,
-    "category": "Kinh tế chính trị Mác - Lênin",
-    "question": "Tư bản khả biến (ký hiệu là v) có đặc điểm nổi bật nào?",
-    "options": [
-      "Biến đổi về lượng, tăng lên trong quá trình sản xuất nhờ tạo ra giá trị mới",
-      "Không bao giờ thay đổi giá trị trong suốt chu kỳ kinh doanh",
-      "Chỉ bao gồm khấu hao máy móc trang thiết bị",
-      "Là khoản tiền trả lãi suất ngân hàng"
-    ],
-    "correctIndex": 0,
-    "explanation": "Tư bản khả biến (v) là bộ phận tư bản biến thành sức lao động, trong quá trình sản xuất nó tạo ra một lượng giá trị mới lớn hơn giá trị của bản thân nó."
-  },
-  {
-    "id": 16,
-    "category": "Kinh tế chính trị Mác - Lênin",
-    "question": "Hai phương pháp sản xuất giá trị thặng dư cơ bản trong chủ nghĩa tư bản là gì?",
-    "options": [
-      "Sản xuất giá trị thặng dư tuyệt đối và tương đối",
-      "Sản xuất giá trị thặng dư nội bộ và đối ngoại",
-      "Sản xuất giá trị thặng dư ngắn hạn và dài hạn",
-      "Sản xuất giá trị thặng dư trực tiếp và gián tiếp"
-    ],
-    "correctIndex": 0,
-    "explanation": "Có 2 phương pháp: Kéo dài tuyệt đối ngày lao động (tuyệt đối) hoặc rút ngắn thời gian lao động tất yếu bằng cách tăng năng suất lao động (tương đối)."
-  },
-  {
-    "id": 17,
-    "category": "Kinh tế chính trị Mác - Lênin",
-    "question": "Quy luật kinh tế căn bản của sản xuất hàng hóa là quy luật nào?",
-    "options": [
-      "Quy luật giá trị",
-      "Quy luật cung cầu",
-      "Quy luật lưu thông tiền tệ",
-      "Quy luật cạnh tranh"
-    ],
-    "correctIndex": 0,
-    "explanation": "Quy luật giá trị là quy luật kinh tế căn bản của sản xuất và trao đổi hàng hóa, đòi hỏi sản xuất và trao đổi phải dựa trên hao phí lao động xã hội cần thiết."
-  },
-  {
-    "id": 18,
-    "category": "Kinh tế chính trị Mác - Lênin",
-    "question": "Thực chất của tích lũy tư bản là gì?",
-    "options": [
-      "Sự chuyển hóa một phần giá trị thặng dư trở lại thành tư bản",
-      "Sự tiết kiệm tiêu dùng cá nhân của nhà tư bản",
-      "Việc vay vốn thêm từ các tổ chức tài chính quốc tế",
-      "Sự gia tăng tiền mặt trong két sắt ngân hàng"
-    ],
-    "correctIndex": 0,
-    "explanation": "Tích lũy tư bản là việc tư bản hóa giá trị thặng dư, tức là biến một phần m thành tư bản phụ thêm để mở rộng quy mô sản xuất."
-  },
-  {
-    "id": 19,
-    "category": "Chủ nghĩa xã hội khoa học",
-    "question": "Tác phẩm nào đánh dấu sự ra đời chính thức của Chủ nghĩa xã hội khoa học?",
-    "options": [
-      "Tuyên ngôn của Đảng Cộng sản (1848)",
-      "Tư bản luận (1867)",
-      "Biện chứng của tự nhiên",
-      "Hệ tư tưởng Đức"
-    ],
-    "correctIndex": 0,
-    "explanation": "Tháng 2/1848, tác phẩm 'Tuyên ngôn của Đảng Cộng sản' do C.Mác và Ph.Ăngghen soạn thảo được công bố, đánh dấu sự ra đời của CNXHKH."
-  },
-  {
-    "id": 20,
-    "category": "Chủ nghĩa xã hội khoa học",
-    "question": "Ai là giai cấp có sứ mệnh lịch sử xóa bỏ chủ nghĩa tư bản, xây dựng chủ nghĩa xã hội và chủ nghĩa cộng sản?",
-    "options": [
-      "Giai cấp công nhân",
-      "Giai cấp nông dân",
-      "Tầng lớp trí thức",
-      "Tầng lớp tiểu thương"
-    ],
-    "correctIndex": 0,
-    "explanation": "Giai cấp công nhân là sản phẩm của nền đại công nghiệp, đại biểu cho phương thức sản xuất tiên tiến, có sứ mệnh lịch sử toàn thế giới."
-  },
-  {
-    "id": 21,
-    "category": "Chủ nghĩa xã hội khoa học",
-    "question": "Đặc trưng bản chất của nền dân chủ xã hội chủ nghĩa là gì?",
-    "options": [
-      "Là nền dân chủ rộng rãi cho đa số nhân dân lao động",
-      "Là nền dân chủ thuần túy, tuyệt đối không có giới hạn pháp lý",
-      "Chỉ bảo vệ quyền lợi của một nhóm tinh hoa chính trị",
-      "Không thừa nhận sự lãnh đạo của bất kỳ chính đảng nào"
-    ],
-    "correctIndex": 0,
-    "explanation": "Nền dân chủ XHCN là nền dân chủ của đa số nhân dân lao động, do Đảng Cộng sản lãnh đạo, mang bản chất của giai cấp công nhân."
-  },
-  {
-    "id": 22,
-    "category": "Chủ nghĩa xã hội khoa học",
-    "question": "Thời kỳ quá độ lên chủ nghĩa xã hội là tất yếu khách quan vì sao?",
-    "options": [
-      "Xã hội mới không thể tự phát nảy sinh trong lòng xã hội cũ mà cần thời gian cải biến cách mạng toàn diện",
-      "Do ý muốn chủ quan của những người lãnh đạo nhà nước",
-      "Để kéo dài thời gian tồn tại của chế độ bóc lột",
-      "Vì các nước phương Tây yêu cầu phải có giai đoạn thử nghiệm"
-    ],
-    "correctIndex": 0,
-    "explanation": "Thời kỳ quá độ là cần thiết vì CNXH đòi hỏi xây dựng cơ sở vật chất kỹ thuật mới và cải biến sâu sắc các quan hệ kinh tế, chính trị, văn hóa cũ."
-  },
-  {
-    "id": 23,
-    "category": "Triết học Mác - Lênin",
-    "question": "Thực tiễn là toàn bộ hoạt động...",
-    "options": [
-      "Vật chất - cảm tính, có tính lịch sử - xã hội nhằm cải tạo tự nhiên và xã hội",
-      "Tinh thần trừu tượng diễn ra trong bộ não con người",
-      "Chiêm nghiệm tôn giáo hướng tới thế giới siêu nhiên",
-      "Thí nghiệm lý thuyết trên giấy tờ"
-    ],
-    "correctIndex": 0,
-    "explanation": "Thực tiễn là toàn bộ hoạt động vật chất có mục đích, mang tính lịch sử - xã hội của con người nhằm cải tạo tự nhiên và xã hội."
-  },
-  {
-    "id": 24,
-    "category": "Triết học Mác - Lênin",
-    "question": "Thực tiễn đóng vai trò gì đối với nhận thức?",
-    "options": [
-      "Là cơ sở, động lực, mục đích của nhận thức và là tiêu chuẩn của chân lý",
-      "Chỉ là yếu tố phụ trợ sau khi đã có lý thuyết hoàn chỉnh",
-      "Không có quan hệ gì với quá trình hình thành tư duy",
-      "Là sản phẩm phái sinh thuần túy từ ý thức"
-    ],
-    "correctIndex": 0,
-    "explanation": "Thực tiễn đóng vai trò là cơ sở, động lực, mục đích của nhận thức và là tiêu chuẩn duy nhất để kiểm tra chân lý."
-  },
-  {
-    "id": 25,
-    "category": "Kinh tế chính trị Mác - Lênin",
-    "question": "Cạnh tranh giữa các ngành sản xuất khác nhau dẫn đến kết quả gì?",
-    "options": [
-      "Hình thành tỷ suất lợi nhuận bình quân và giá cả sản xuất",
-      "Hình thành giá trị thị trường của từng loại hàng hóa",
-      "Triệt tiêu hoàn toàn sự phát triển khoa học công nghệ",
-      "Dẫn tới việc xóa bỏ chế độ tư hữu tư bản chủ nghĩa"
-    ],
-    "correctIndex": 0,
-    "explanation": "Cạnh tranh giữa các ngành dẫn đến sự tự do di chuyển tư bản từ ngành có tỷ suất lợi nhuận thấp sang ngành cao, hình thành tỷ suất lợi nhuận bình quân."
-  },
-  {
-    "id": 26,
-    "category": "Kinh tế chính trị Mác - Lênin",
-    "question": "Tổ chức độc quyền là sự liên minh giữa các nhà tư bản lớn nhằm mục đích gì?",
-    "options": [
-      "Thu lợi nhuận độc quyền cao bằng cách khống chế sản xuất và tiêu thụ",
-      "Hỗ trợ miễn phí hàng hóa cho người tiêu dùng nghèo",
-      "Tăng cường tính cạnh tranh tự do tuyệt đối trên thị trường",
-      "Xóa bỏ hoàn toàn tình trạng thất nghiệp"
-    ],
-    "correctIndex": 0,
-    "explanation": "Tổ chức độc quyền nắm giữ phần lớn sản xuất và lưu thông hàng hóa nhằm thu được lợi nhuận độc quyền cao."
-  },
-  {
-    "id": 27,
-    "category": "Chủ nghĩa xã hội khoa học",
-    "question": "Nguyên tắc phân phối chủ yếu trong giai đoạn đầu (chủ nghĩa xã hội) là gì?",
-    "options": [
-      "Làm theo năng lực, hưởng theo lao động",
-      "Làm theo năng lực, hưởng theo nhu cầu",
-      "Phân phối cào bằng bình quân tuyệt đối",
-      "Phân phối dựa theo nguồn gốc xuất thân gia đình"
-    ],
-    "correctIndex": 0,
-    "explanation": "Trong CNXH, nguyên tắc phân phối chủ đạo là 'Làm theo năng lực, hưởng theo lao động'; sang giai đoạn cao (CNCS) mới đạt 'hưởng theo nhu cầu'."
-  },
-  {
-    "id": 28,
-    "category": "Triết học Mác - Lênin",
-    "question": "Ý thức có nguồn gốc từ đâu?",
-    "options": [
-      "Nguồn gốc tự nhiên (bộ não người, thế giới khách quan) và nguồn gốc xã hội (lao động, ngôn ngữ)",
-      "Chỉ bắt nguồn từ ý niệm tuyệt đối của Thượng đế",
-      "Sinh ra thuần túy do cảm xúc bẩm sinh của từng cá nhân",
-      "Do di truyền sinh học từ thế hệ này sang thế hệ khác"
-    ],
-    "correctIndex": 0,
-    "explanation": "Ý thức có 2 nguồn gốc: Nguồn gốc tự nhiên (não người và thế giới tác động lên não) và nguồn gốc xã hội (lao động và ngôn ngữ - trong đó lao động giữ vai trò quyết định)."
-  },
-  {
-    "id": 29,
-    "category": "Triết học Mác - Lênin",
-    "question": "Mối quan hệ biện chứng giữa tồn tại xã hội và ý thức xã hội là gì?",
-    "options": [
-      "Tồn tại xã hội quyết định ý thức xã hội, nhưng ý thức xã hội có tính độc lập tương đối và tác động trở lại",
-      "Ý thức xã hội luôn quyết định và tạo ra tồn tại xã hội",
-      "Tồn tại xã hội và ý thức xã hội hoàn toàn độc lập, không liên quan nhau",
-      "Ý thức xã hội luôn thay đổi ngay lập tức theo mọi biến động kinh tế"
-    ],
-    "correctIndex": 0,
-    "explanation": "Tồn tại xã hội quyết định ý thức xã hội, song ý thức xã hội có tính độc lập tương đối, có thể vượt trước hoặc lạc hậu hơn và tác động trở lại mạnh mẽ."
-  },
-  {
-    "id": 30,
-    "category": "Chủ nghĩa xã hội khoa học",
-    "question": "Cơ cấu xã hội - giai cấp trong thời kỳ quá độ lên chủ nghĩa xã hội ở Việt Nam gồm những lực lượng nòng cốt nào?",
-    "options": [
-      "Giai cấp công nhân, giai cấp nông dân, đội ngũ trí thức, đội ngũ doanh nhân...",
-      "Chỉ duy nhất giai cấp công nhân",
-      "Tư sản công nghiệp và địa chủ phong kiến",
-      "Giai cấp vô sản quốc tế"
-    ],
-    "correctIndex": 0,
-    "explanation": "Ở Việt Nam, liên minh công nhân - nông dân - trí thức là nền tảng chính trị - xã hội vững chắc của khối đại đoàn kết toàn dân tộc dưới sự lãnh đạo của Đảng."
-  }
-]
+{
+  "title": "30 CÂU HỎI TRẮC NGHIỆM VỀ CHÍNH SÁCH TÔN GIÁO VÀ MỐI QUAN HỆ DÂN TỘC - TÔN GIÁO HIỆN NAY",
+  "description": "Bộ câu hỏi ôn tập môn Chủ nghĩa xã hội khoa học chuẩn hóa cho Quizlet, Blooket, Kahoot",
+  "total_questions": 30,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "question": "Đâu là đặc điểm nổi bật đầu tiên của tôn giáo ở Việt Nam?",
+      "options": {
+        "A": "Chỉ tồn tại các tôn giáo nội sinh",
+        "B": "Là quốc gia có nhiều tôn giáo",
+        "C": "Luôn diễn ra xung đột tôn giáo gay gắt",
+        "D": "Tôn giáo chỉ xuất hiện ở vùng đồng bằng"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 2,
+      "type": "multiple_choice",
+      "question": "Ở Việt Nam hiện nay có khoảng bao nhiêu tôn giáo đã được Nhà nước công nhận và cấp đăng ký hoạt động?",
+      "options": {
+        "A": "3 tôn giáo",
+        "B": "8 tôn giáo",
+        "C": "Hơn 16 tôn giáo với trên 40 tổ chức tôn giáo",
+        "D": "Chỉ có Phật giáo và Công giáo"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 3,
+      "type": "multiple_choice",
+      "question": "Tôn giáo nào sau đây là tôn giáo nội sinh ra đời tại Việt Nam?",
+      "options": {
+        "A": "Phật giáo",
+        "B": "Hồi giáo",
+        "C": "Phật giáo Hòa Hảo và Đạo Cao Đài",
+        "D": "Công giáo"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 4,
+      "type": "multiple_choice",
+      "question": "Đặc điểm nổi bật trong quan hệ giữa các tôn giáo ở Việt Nam trong tiến trình lịch sử là gì?",
+      "options": {
+        "A": "Luôn diễn ra các cuộc chiến tranh tôn giáo khốc liệt",
+        "B": "Chung sống hòa bình, đoàn kết, dung hợp và đan xen",
+        "C": "Cô lập hoàn toàn, không giao lưu tiếp xúc",
+        "D": "Mỗi tôn giáo chiếm giữ một vùng lãnh thổ độc lập"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 5,
+      "type": "multiple_choice",
+      "question": "Phần lớn tín đồ các tôn giáo ở Việt Nam có xuất thân từ giai cấp, tầng lớp nào?",
+      "options": {
+        "A": "Tầng lớp quý tộc phong kiến",
+        "B": "Nhân dân lao động, có lòng yêu nước và tinh thần tự hào dân tộc",
+        "C": "Giai cấp tư sản mại bản",
+        "D": "Người nước ngoài nhập cư"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 6,
+      "type": "multiple_choice",
+      "question": "Nguyên tắc cốt lõi trong chính sách tôn giáo của Đảng và Nhà nước Việt Nam là gì?",
+      "options": {
+        "A": "Bắt buộc mọi công dân phải theo một tôn giáo",
+        "B": "Cấm đoán mọi hoạt động tín ngưỡng, tôn giáo",
+        "C": "Tôn trọng và bảo đảm quyền tự do tín ngưỡng, tôn giáo và không tín ngưỡng, tôn giáo của công dân",
+        "D": "Chỉ bảo hộ các tôn giáo ngoại nhập"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 7,
+      "type": "multiple_choice",
+      "question": "Theo quan điểm của Đảng ta, nội dung cốt lõi của công tác tôn giáo là gì?",
+      "options": {
+        "A": "Công tác hành chính quản lý",
+        "B": "Công tác vận động quần chúng",
+        "C": "Công tác thanh tra xử phạt",
+        "D": "Công tác phát triển kinh tế thị trường"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 8,
+      "type": "multiple_choice",
+      "question": "Luật Tín ngưỡng, tôn giáo của nước Cộng hòa Xã hội Chủ nghĩa Việt Nam được Quốc hội thông qua vào năm nào?",
+      "options": {
+        "A": "Năm 2004",
+        "B": "Năm 2013",
+        "C": "Năm 2016 (có hiệu lực từ 01/01/2018)",
+        "D": "Năm 2020"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 9,
+      "type": "multiple_choice",
+      "question": "Mục tiêu chung quy tụ đồng bào các tôn giáo và đồng bào không theo tôn giáo vào khối đại đoàn kết toàn dân tộc là gì?",
+      "options": {
+        "A": "Cùng nhau xóa bỏ mọi sinh hoạt tôn giáo",
+        "B": "Mục tiêu dân giàu, nước mạnh, dân chủ, công bằng, văn minh",
+        "C": "Xây dựng các tổ chức tôn giáo thành các đảng phái chính trị",
+        "D": "Cạnh tranh vị thế ảnh hưởng quốc tế"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 10,
+      "type": "multiple_choice",
+      "question": "Hành vi nào sau đây bị pháp luật Việt Nam nghiêm cấm trong hoạt động tôn giáo?",
+      "options": {
+        "A": "Sinh hoạt tôn giáo theo hiến chương, điều lệ hợp pháp",
+        "B": "Lợi dụng tôn giáo để chia rẽ dân tộc, gây rối trật tự xã hội và chống phá Nhà nước",
+        "C": "Sửa chữa, tôn tạo cơ sở thờ tự theo quy định pháp luật",
+        "D": "Xuất bản kinh sách tôn giáo có đăng ký cấp phép"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 11,
+      "type": "multiple_choice",
+      "question": "Mối quan hệ giữa dân tộc và tôn giáo ở Việt Nam có đặc điểm nổi bật nào?",
+      "options": {
+        "A": "Hoàn toàn độc lập, tách rời không ảnh hưởng lẫn nhau",
+        "B": "Gắn bó chặt chẽ, đan xen và có sự hòa quyện sâu sắc",
+        "C": "Luôn xung đột và đối kháng quyết liệt",
+        "D": "Tôn giáo quyết định sự hình thành của thành phần dân tộc"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 12,
+      "type": "multiple_choice",
+      "question": "Hiện tượng tôn giáo nào thường gắn bó khăng khít với văn hóa và phong tục tập quán của đồng bào dân tộc Khmer Nam Bộ?",
+      "options": {
+        "A": "Phật giáo Nam tông (Theravada)",
+        "B": "Phật giáo Bắc tông (Mahayana)",
+        "C": "Đạo Tin Lành",
+        "D": "Đạo Hồi giáo Islam"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 13,
+      "type": "multiple_choice",
+      "question": "Đồng bào người Chăm ở Ninh Thuận, Bình Thuận chủ yếu theo những tôn giáo nào?",
+      "options": {
+        "A": "Công giáo và Tin Lành",
+        "B": "Bàlamôn giáo và Hồi giáo (Bà-ni và Islam)",
+        "C": "Phật giáo Hòa Hảo",
+        "D": "Cao Đài"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 14,
+      "type": "multiple_choice",
+      "question": "Âm mưu chủ yếu của các thế lực thù địch khi lợi dụng vấn đề dân tộc, tôn giáo ở nước ta là gì?",
+      "options": {
+        "A": "Hỗ trợ phát triển kinh tế cho vùng sâu vùng xa",
+        "B": "Bảo tồn bản sắc văn hóa các dân tộc thiểu số",
+        "C": "Thực hiện 'Diễn biến hòa bình', phá hoại khối đại đoàn kết toàn dân tộc",
+        "D": "Thúc đẩy tự do giao thương quốc tế"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 15,
+      "type": "multiple_choice",
+      "question": "Vấn đề tôn giáo ở vùng Tây Bắc và Tây Nguyên trong những năm gần đây có hiện tượng đáng lưu ý nào?",
+      "options": {
+        "A": "Sự suy giảm hoàn toàn của các tín ngưỡng bản địa",
+        "B": "Sự phát triển nhanh của đạo Tin Lành và sự xuất hiện các 'hiện tượng tôn giáo mới' mang tính tà đạo",
+        "C": "Người dân tự ý từ bỏ toàn bộ mọi sinh hoạt tâm linh",
+        "D": "Chuyển giao toàn bộ đất đai cho các tổ chức nước ngoài"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 16,
+      "type": "multiple_choice",
+      "question": "Để giải quyết tốt mối quan hệ dân tộc - tôn giáo, nguyên tắc trọng tâm cần quán triệt là gì?",
+      "options": {
+        "A": "Ưu tiên tôn giáo hơn quyền lợi dân tộc",
+        "B": "Đặt lợi ích quốc gia - dân tộc lên trên hết, bảo đảm quyền tự do tín ngưỡng chính đáng",
+        "C": "Đồng hóa mọi bản sắc tôn giáo thành một",
+        "D": "Hạn chế sự tham gia của đồng bào có đạo vào đời sống chính trị"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 17,
+      "type": "multiple_choice",
+      "question": "Tổ chức nào là hình thức tập hợp rộng rãi các tầng lớp nhân dân, bao gồm chức sắc và tín đồ các tôn giáo tại Việt Nam?",
+      "options": {
+        "A": "Hội đồng Kinh tế Quốc tế",
+        "B": "Mặt trận Tổ quốc Việt Nam",
+        "C": "Viện Hàn lâm Khoa học",
+        "D": "Phòng Thương mại và Công nghiệp"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 18,
+      "type": "multiple_choice",
+      "question": "Phương châm sống tốt đẹp của người Công giáo Việt Nam được Hội đồng Giám mục đề ra là gì?",
+      "options": {
+        "A": "Sống Phúc âm giữa lòng dân tộc để phục vụ hạnh phúc của đồng bào",
+        "B": "Tách biệt đời sống đức tin khỏi đời sống xã hội",
+        "C": "Chỉ quan tâm đến đời sống tâm linh cá nhân",
+        "D": "Phục tùng tuyệt đối các chỉ dẫn từ nước ngoài mà không màng pháp luật"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 19,
+      "type": "multiple_choice",
+      "question": "Phương châm hành đạo của Giáo hội Phật giáo Việt Nam là gì?",
+      "options": {
+        "A": "Đạo pháp - Dân tộc - Chủ nghĩa xã hội",
+        "B": "Từ bi hỷ xả - Tự do tuyệt đối",
+        "C": "Bảo thủ giáo lý truyền thống nguyên thủy",
+        "D": "Xa rời đời sống nhân dân lao động"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 20,
+      "type": "multiple_choice",
+      "question": "Đảng và Nhà nước ta khẳng định tôn giáo là nhu cầu tinh thần của một bộ phận nhân dân...",
+      "options": {
+        "A": "Sẽ nhanh chóng biến mất trong vài thập kỷ tới",
+        "B": "Đang và sẽ tồn tại cùng dân tộc trong quá trình xây dựng chủ nghĩa xã hội",
+        "C": "Cần phải được loại bỏ bằng các biện pháp hành chính cưỡng chế",
+        "D": "Chỉ có ở các quốc gia tư bản chủ nghĩa"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 21,
+      "type": "multiple_choice",
+      "question": "Mối quan hệ giữa quyền tự do tín ngưỡng, tôn giáo và trách nhiệm công dân được thể hiện thế nào?",
+      "options": {
+        "A": "Người có tín ngưỡng không phải tuân thủ Hiến pháp và pháp luật",
+        "B": "Quyền tự do tín ngưỡng luôn đi đôi với nghĩa vụ tuân thủ Hiến pháp và pháp luật",
+        "C": "Quyền tôn giáo đứng trên luật pháp nhà nước",
+        "D": "Chỉ có nghĩa vụ khi tham gia bầu cử"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 22,
+      "type": "multiple_choice",
+      "question": "Chính sách bình đẳng giữa các tôn giáo trước pháp luật có ý nghĩa gì?",
+      "options": {
+        "A": "Mọi tôn giáo hợp pháp đều bình đẳng về quyền và nghĩa vụ, không phân biệt đối xử",
+        "B": "Tôn giáo đông tín đồ hơn thì có quyền lực chính trị cao hơn",
+        "C": "Tôn giáo nội sinh có quyền miễn trừ tư pháp",
+        "D": "Nhà nước chỉ công nhận một tôn giáo quốc đạo duy nhất"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 23,
+      "type": "multiple_choice",
+      "question": "Việc giữ gìn và phát huy những giá trị văn hóa, đạo đức tốt đẹp của các tôn giáo nhằm mục đích gì?",
+      "options": {
+        "A": "Thay thế hoàn toàn nền văn hóa tiên tiến đậm đà bản sắc dân tộc",
+        "B": "Đóng góp tích cực vào công cuộc xây dựng đời sống văn hóa mới, đạo đức xã hội lành mạnh",
+        "C": "Tạo ra sự độc quyền về tư tưởng tôn giáo",
+        "D": "Chỉ phục vụ mục đích du lịch tâm linh thương mại"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 24,
+      "type": "multiple_choice",
+      "question": "Một trong những bài học kinh nghiệm quan trọng trong xử lý các điểm nóng dân tộc - tôn giáo là gì?",
+      "options": {
+        "A": "Sử dụng biện pháp quân sự trấn áp triệt để",
+        "B": "Kiên trì đối thoại, vận động quần chúng, phân hóa kẻ cầm đầu với đồng bào bị xúi giục",
+        "C": "Để mặc cho các tổ chức tôn giáo tự dàn xếp mâu thuẫn",
+        "D": "Kêu gọi can thiệp quân sự quốc tế"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 25,
+      "type": "multiple_choice",
+      "question": "Nhà nước Việt Nam nghiêm cấm hành vi nào liên quan đến quyền tự do tín ngưỡng?",
+      "options": {
+        "A": "Tự nguyện theo một tôn giáo hợp pháp",
+        "B": "Xâm phạm quyền tự do tín ngưỡng, ép buộc hoặc cản trở người khác theo hoặc không theo tôn giáo",
+        "C": "Tổ chức lễ hội tôn giáo theo đúng đăng ký",
+        "D": "Đi lễ chùa, nhà thờ vào các dịp cuối tuần và ngày lễ"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 26,
+      "type": "multiple_choice",
+      "question": "Cơ sở kinh tế - xã hội quan trọng nhất để củng cố mối quan hệ đoàn kết dân tộc - tôn giáo ở vùng đồng bào thiểu số là gì?",
+      "options": {
+        "A": "Đẩy mạnh phát triển kinh tế, nâng cao đời sống vật chất và văn hóa của nhân dân",
+        "B": "Cắt giảm các khoản hỗ trợ y tế, giáo dục",
+        "C": "Di dân ồ ạt từ thành thị lên nông thôn",
+        "D": "Xây dựng thêm các rào cản hành chính giữa các địa phương"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 27,
+      "type": "multiple_choice",
+      "question": "Vai trò của đội ngũ cán bộ làm công tác dân tộc, tôn giáo đòi hỏi tiêu chuẩn gì nổi bật?",
+      "options": {
+        "A": "Chỉ cần am hiểu lý thuyết sách vở",
+        "B": "Nắm vững chủ trương chính sách, hiểu phong tục tập quán, biết tiếng dân tộc và gần gũi với nhân dân",
+        "C": "Chỉ cần áp dụng các chế tài hành chính cứng nhắc",
+        "D": "Bắt buộc phải là người theo tôn giáo đó"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 28,
+      "type": "multiple_choice",
+      "question": "Quan hệ quốc tế về tôn giáo của các tổ chức tôn giáo Việt Nam phải tuân thủ nguyên tắc nào?",
+      "options": {
+        "A": "Tự do tuyệt đối không cần báo cáo cơ quan chức năng",
+        "B": "Phù hợp với pháp luật Việt Nam, giữ vững độc lập, chủ quyền và lợi ích quốc gia",
+        "C": "Chịu sự chỉ đạo hoàn toàn của các tổ chức nước ngoài",
+        "D": "Không được phép giao lưu với bất kỳ tổ chức tôn giáo nước ngoài nào"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 29,
+      "type": "multiple_choice",
+      "question": "Hoạt động từ thiện, nhân đạo, y tế, giáo dục của các tổ chức tôn giáo ở Việt Nam được Nhà nước...",
+      "options": {
+        "A": "Khuyến khích và tạo điều kiện thuận lợi theo quy định của pháp luật",
+        "B": "Nghiêm cấm tuyệt đối vì đó là nhiệm vụ độc quyền của cơ quan công quyền",
+        "C": "Đánh thuế rất nặng nhằm hạn chế quy mô",
+        "D": "Chỉ cho phép người nước ngoài thực hiện"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 30,
+      "type": "multiple_choice",
+      "question": "Thực hiện tốt chính sách tôn giáo và giải quyết hài hòa mối quan hệ dân tộc - tôn giáo góp phần trực tiếp vào điều gì?",
+      "options": {
+        "A": "Xóa bỏ sự đa dạng văn hóa truyền thống",
+        "B": "Củng cố vững chắc thế trận lòng dân, giữ vững an ninh chính trị và trật tự an toàn xã hội",
+        "C": "Tạo ra các khu tự trị tôn giáo độc lập",
+        "D": "Giảm bớt vai trò lãnh đạo của Đảng và quản lý của Nhà nước"
+      },
+      "answer": "B"
+    }
+  ]
+}

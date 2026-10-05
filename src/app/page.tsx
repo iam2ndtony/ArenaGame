@@ -2,8 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Sparkles, Trophy, Users, Shield, Zap, ArrowRight, Play, QrCode } from 'lucide-react';
-import Link from 'next/link';
+import { Play, QrCode, ArrowRight, BookOpen, Users, Trophy, Award } from 'lucide-react';
 
 export default function HomePage() {
   const router = useRouter();
@@ -15,127 +14,107 @@ export default function HomePage() {
     e.preventDefault();
     const cleanPin = pinInput.trim();
     if (!cleanPin || cleanPin.length !== 6 || !/^\d+$/.test(cleanPin)) {
-      setErrorMsg('Vui lòng nhập đúng mã phòng gồm 6 chữ số!');
+      setErrorMsg('Vui lòng nhập đúng mã phòng gồm 6 chữ số');
       return;
     }
     router.push(`/play/${cleanPin}`);
   };
 
-  const handleCreateHostRoom = async () => {
+  const handleCreateHostRoom = () => {
     setCreatingHost(true);
-    // Navigate to host creation
     router.push('/host/new');
   };
 
   return (
-    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '30px 20px 60px' }}>
-      {/* Top Brand Bar */}
-      <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '40px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+    <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '32px 20px 64px' }}>
+      {/* Top Header */}
+      <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '48px', paddingBottom: '20px', borderBottom: '1px solid var(--border-subtle)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <div style={{
-            width: '48px',
-            height: '48px',
-            borderRadius: '14px',
-            background: 'linear-gradient(135deg, #e62238 0%, #b31024 100%)',
+            width: '40px',
+            height: '40px',
+            borderRadius: '10px',
+            backgroundColor: 'var(--accent-red)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            fontSize: '24px',
-            boxShadow: '0 0 20px rgba(230, 34, 56, 0.5)',
+            color: '#fff',
+            fontWeight: '800',
+            fontSize: '18px',
           }}>
-            ⭐
+            M
           </div>
           <div>
-            <h1 style={{ fontSize: '1.5rem', fontWeight: '900', letterSpacing: '-0.03em', lineHeight: 1.1 }}>
-              MARX<span style={{ color: 'var(--accent-gold)' }}>ARENA</span>
-            </h1>
-            <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Đấu trường trắc nghiệm Mác - Lênin đỉnh cao</p>
+            <div style={{ fontSize: '1.25rem', fontWeight: '800', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
+              MarxArena
+            </div>
+            <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
+              Đấu trường trắc nghiệm Chủ nghĩa xã hội khoa học & Mác - Lênin
+            </div>
           </div>
         </div>
 
-        <div style={{ display: 'flex', gap: '10px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <span style={{
             display: 'inline-flex',
             alignItems: 'center',
             gap: '6px',
-            padding: '6px 14px',
-            background: 'rgba(255, 199, 44, 0.1)',
-            border: '1px solid rgba(255, 199, 44, 0.3)',
-            borderRadius: '20px',
-            fontSize: '0.82rem',
-            color: 'var(--accent-gold-bright)',
-            fontWeight: '600',
+            padding: '5px 12px',
+            backgroundColor: '#1e293b',
+            border: '1px solid var(--border-subtle)',
+            borderRadius: '6px',
+            fontSize: '0.8rem',
+            color: 'var(--text-secondary)',
+            fontWeight: '500',
           }}>
-            <Sparkles size={14} /> Chế độ Đấu Trường Mở Rương
+            <BookOpen size={14} color="var(--accent-gold)" /> Chuẩn hóa MLN131
           </span>
         </div>
       </header>
 
       {/* Hero Section */}
-      <div style={{ textAlign: 'center', margin: '30px auto 50px', maxWidth: '820px' }}>
-        <div style={{
-          display: 'inline-block',
-          padding: '6px 18px',
-          background: 'rgba(230, 34, 56, 0.15)',
-          border: '1px solid rgba(230, 34, 56, 0.4)',
-          borderRadius: '30px',
-          color: '#ff8595',
-          fontSize: '0.9rem',
-          fontWeight: '700',
-          marginBottom: '20px',
-        }}>
-          ☭ Học tập sôi nổi • Tranh tài tri thức • Lội ngược dòng bất ngờ
-        </div>
-        <h2 style={{ fontSize: '3rem', fontWeight: '900', lineHeight: 1.15, marginBottom: '18px' }}>
-          Ôn tập Triết học & Kinh tế chính trị <br />
-          <span className="text-gradient-gold">Bằng Trải Nghiệm Đấu Trường Realtime</span>
-        </h2>
-        <p style={{ fontSize: '1.15rem', color: 'var(--text-muted)', lineHeight: 1.6, maxWidth: '680px', margin: '0 auto' }}>
-          Giảng viên và người thuyết trình chiếu mã QR lên màn hình lớn. Người chơi quét điện thoại vào phòng ngay không cần đăng nhập, trả lời câu hỏi và mở rương cướp điểm nghẹt thở!
+      <div style={{ textAlign: 'center', margin: '20px auto 44px', maxWidth: '720px' }}>
+        <h1 style={{ fontSize: '2.4rem', fontWeight: '800', lineHeight: 1.25, marginBottom: '14px', color: 'var(--text-primary)' }}>
+          Nền tảng thi đấu trắc nghiệm <br />
+          <span style={{ color: 'var(--accent-gold)' }}>Chính sách tôn giáo & Mác - Lênin</span>
+        </h1>
+        <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: '620px', margin: '0 auto' }}>
+          Giảng viên hoặc nhóm thuyết trình chiếu mã QR lên màn hình. Sinh viên quét camera bằng điện thoại để tham gia trả lời câu hỏi và mở rương tích điểm theo thời gian thực.
         </p>
       </div>
 
       {/* 2 Main Action Cards */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '26px', marginBottom: '60px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px', marginBottom: '52px' }}>
         {/* Card 1: Player Join Room */}
-        <div className="glass-panel-elevated" style={{ padding: '36px 30px', position: 'relative', overflow: 'hidden' }}>
-          <div style={{
-            position: 'absolute',
-            top: '-20px',
-            right: '-20px',
-            width: '120px',
-            height: '120px',
-            background: 'radial-gradient(circle, rgba(14, 165, 233, 0.25) 0%, transparent 70%)',
-            pointerEvents: 'none',
-          }} />
-
-          <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '20px' }}>
+        <div className="glass-panel" style={{ padding: '32px 28px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '18px' }}>
             <div style={{
-              width: '46px',
-              height: '46px',
-              borderRadius: '12px',
-              background: 'rgba(14, 165, 233, 0.15)',
+              width: '42px',
+              height: '42px',
+              borderRadius: '10px',
+              backgroundColor: '#1e293b',
+              border: '1px solid var(--border-subtle)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               color: '#38bdf8',
             }}>
-              <Play size={24} />
+              <Play size={20} />
             </div>
             <div>
-              <h3 style={{ fontSize: '1.4rem' }}>Người Chơi Tham Gia</h3>
-              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Dành cho sinh viên tham gia thi đấu từ điện thoại/laptop</p>
+              <h2 style={{ fontSize: '1.25rem', fontWeight: '700' }}>Tham Gia Bằng Mã Phòng</h2>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Dành cho người chơi trên điện thoại hoặc máy tính</p>
             </div>
           </div>
 
           <form onSubmit={handleJoinByPin}>
             <div style={{ marginBottom: '16px' }}>
-              <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: '600', marginBottom: '8px', color: 'var(--text-muted)' }}>
-                Nhập Mã Phòng (PIN 6 số)
+              <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: '600', marginBottom: '8px', color: 'var(--text-secondary)' }}>
+                MÃ PIN PHÒNG (6 CHỮ SỐ)
               </label>
               <input
                 type="text"
-                placeholder="Ví dụ: 829413"
+                placeholder="Nhập 6 số PIN"
                 maxLength={6}
                 value={pinInput}
                 onChange={(e) => {
@@ -144,21 +123,20 @@ export default function HomePage() {
                 }}
                 style={{
                   width: '100%',
-                  padding: '16px 20px',
-                  background: 'rgba(0, 0, 0, 0.4)',
-                  border: errorMsg ? '2px solid #ef4444' : '2px solid rgba(255, 255, 255, 0.12)',
-                  borderRadius: '14px',
-                  color: 'white',
-                  fontSize: '1.4rem',
-                  fontWeight: '800',
-                  letterSpacing: '0.2em',
+                  padding: '14px 16px',
+                  backgroundColor: 'var(--bg-input)',
+                  border: errorMsg ? '1px solid #ef4444' : '1px solid var(--border-subtle)',
+                  borderRadius: '10px',
+                  color: '#ffffff',
+                  fontSize: '1.25rem',
+                  fontWeight: '700',
+                  letterSpacing: '0.15em',
                   textAlign: 'center',
                   outline: 'none',
-                  transition: 'border-color 0.2s',
                 }}
               />
               {errorMsg && (
-                <p style={{ color: '#ef4444', fontSize: '0.85rem', marginTop: '6px', fontWeight: '500' }}>
+                <p style={{ color: '#ef4444', fontSize: '0.82rem', marginTop: '6px' }}>
                   {errorMsg}
                 </p>
               )}
@@ -167,57 +145,48 @@ export default function HomePage() {
             <button
               type="submit"
               className="btn-primary"
-              style={{ width: '100%', padding: '16px' }}
+              style={{ width: '100%', padding: '14px', fontSize: '1rem' }}
             >
-              VÀO PHÒNG NGAY <ArrowRight size={20} />
+              Vào phòng thi đấu <ArrowRight size={18} />
             </button>
           </form>
 
-          <p style={{ fontSize: '0.82rem', color: 'var(--text-dim)', textAlign: 'center', marginTop: '16px' }}>
-            💡 Mẹo: Quét trực tiếp mã QR trên máy chiếu để vào phòng tự động mà không cần gõ mã!
+          <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textAlign: 'center', marginTop: '14px' }}>
+            Mẹo: Quét mã QR trực tiếp trên màn hình chiếu để vào phòng tự động.
           </p>
         </div>
 
         {/* Card 2: Host Create Room */}
-        <div className="glass-panel-elevated" style={{ padding: '36px 30px', position: 'relative', overflow: 'hidden' }}>
-          <div style={{
-            position: 'absolute',
-            top: '-20px',
-            right: '-20px',
-            width: '120px',
-            height: '120px',
-            background: 'radial-gradient(circle, rgba(230, 34, 56, 0.3) 0%, transparent 70%)',
-            pointerEvents: 'none',
-          }} />
-
-          <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '20px' }}>
+        <div className="glass-panel" style={{ padding: '32px 28px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '18px' }}>
             <div style={{
-              width: '46px',
-              height: '46px',
-              borderRadius: '12px',
-              background: 'rgba(230, 34, 56, 0.15)',
+              width: '42px',
+              height: '42px',
+              borderRadius: '10px',
+              backgroundColor: '#1e293b',
+              border: '1px solid var(--border-subtle)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              color: '#ff6b6b',
+              color: 'var(--accent-gold)',
             }}>
-              <QrCode size={24} />
+              <QrCode size={20} />
             </div>
             <div>
-              <h3 style={{ fontSize: '1.4rem' }}>Chủ Phòng / Màn Hình Chiếu</h3>
-              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Dành cho giảng viên, nhóm thuyết trình mở phòng</p>
+              <h2 style={{ fontSize: '1.25rem', fontWeight: '700' }}>Tạo Phòng Máy Chiếu (Host)</h2>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Dành cho giảng viên hoặc nhóm trưởng tổ chức</p>
             </div>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '24px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.92rem', color: 'var(--text-muted)' }}>
-              <span style={{ color: 'var(--accent-gold)' }}>✓</span> Tự động tạo mã QR quét tức thì trong cùng Wi-Fi
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '22px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+              <span style={{ color: 'var(--accent-gold)' }}>•</span> Tự động tạo mã QR quét tức thì không cần cài ứng dụng
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.92rem', color: 'var(--text-muted)' }}>
-              <span style={{ color: 'var(--accent-gold)' }}>✓</span> Bộ 30 câu hỏi chuẩn Mác - Lênin (hoặc nạp thêm file riêng)
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+              <span style={{ color: 'var(--accent-gold)' }}>•</span> 30 câu hỏi về Chính sách tôn giáo & Quan hệ dân tộc - tôn giáo
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.92rem', color: 'var(--text-muted)' }}>
-              <span style={{ color: 'var(--accent-gold)' }}>✓</span> Bảng xếp hạng trực tiếp & Vinh danh Podium Top 3 rực rỡ
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+              <span style={{ color: 'var(--accent-gold)' }}>•</span> Tùy chọn thời lượng thi đấu và xếp hạng thời gian thực
             </div>
           </div>
 
@@ -225,55 +194,59 @@ export default function HomePage() {
             onClick={handleCreateHostRoom}
             disabled={creatingHost}
             className="btn-gold"
-            style={{ width: '100%', padding: '16px' }}
+            style={{ width: '100%', padding: '14px', fontSize: '1rem' }}
           >
-            {creatingHost ? 'ĐANG KHỞI TẠO...' : 'TẠO PHÒNG MÁY CHIẾU (HOST)'}
+            {creatingHost ? 'Đang khởi tạo...' : 'Tạo phòng chiếu cho lớp'}
           </button>
 
-          <p style={{ fontSize: '0.82rem', color: 'var(--text-dim)', textAlign: 'center', marginTop: '16px' }}>
-            Không cần đăng ký tài khoản • Bắt đầu ngay sau 5 giây
+          <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textAlign: 'center', marginTop: '14px' }}>
+            Hoàn toàn miễn phí, không yêu cầu đăng ký tài khoản.
           </p>
         </div>
       </div>
 
       {/* Feature Showcase Grid */}
-      <div style={{ textAlign: 'center', marginBottom: '30px' }}>
-        <h3 style={{ fontSize: '1.8rem', fontWeight: '800', marginBottom: '8px' }}>
-          Trải Nghiệm Đấu Trường Cực Kỳ Cuốn Hút
-        </h3>
-        <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>Các cơ chế rương báu tạo bất ngờ đến giây cuối cùng</p>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }}>
+        <div className="glass-panel" style={{ padding: '20px 18px' }}>
+          <div style={{ fontWeight: '700', fontSize: '1rem', marginBottom: '6px', color: 'var(--text-primary)' }}>
+            🎁 Rương phần thưởng
+          </div>
+          <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+            Trả lời đúng để nhận cơ hội chọn rương tích điểm, nhân đôi điểm số hoặc cướp điểm đối thủ.
+          </p>
+        </div>
+
+        <div className="glass-panel" style={{ padding: '20px 18px' }}>
+          <div style={{ fontWeight: '700', fontSize: '1rem', marginBottom: '6px', color: 'var(--text-primary)' }}>
+            🛡️ Cơ chế phòng vệ
+          </div>
+          <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+            Rương khiên bảo vệ giúp điểm số của bạn an toàn trước các đợt cướp điểm trong 30 giây.
+          </p>
+        </div>
+
+        <div className="glass-panel" style={{ padding: '20px 18px' }}>
+          <div style={{ fontWeight: '700', fontSize: '1rem', marginBottom: '6px', color: 'var(--text-primary)' }}>
+            🏆 Bảng xếp hạng trực tiếp
+          </div>
+          <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+            Theo dõi vị trí liên tục trên màn hình chiếu lớp học và vinh danh Top 3 khi kết thúc ván đấu.
+          </p>
+        </div>
+
+        <div className="glass-panel" style={{ padding: '20px 18px' }}>
+          <div style={{ fontWeight: '700', fontSize: '1rem', marginBottom: '6px', color: 'var(--text-primary)' }}>
+            📝 Giải thích kiến thức
+          </div>
+          <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+            Mỗi câu trả lời sai đều cung cấp đáp án đúng và lý giải ngắn gọn giúp củng cố kiến thức ôn thi.
+          </p>
+        </div>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '18px' }}>
-        <div className="glass-panel" style={{ padding: '24px 20px', textAlign: 'center' }}>
-          <div style={{ fontSize: '2.5rem', marginBottom: '12px' }}>🎁</div>
-          <h4 style={{ fontSize: '1.1rem', marginBottom: '6px' }}>3 Rương Thần Bí</h4>
-          <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Mỗi khi trả lời đúng, tự do chọn 1 trong 3 rương báu để nhận phần thưởng ngẫu nhiên.</p>
-        </div>
-
-        <div className="glass-panel" style={{ padding: '24px 20px', textAlign: 'center' }}>
-          <div style={{ fontSize: '2.5rem', marginBottom: '12px' }}>🦹</div>
-          <h4 style={{ fontSize: '1.1rem', marginBottom: '6px' }}>Cướp & Hoán Đổi</h4>
-          <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Cướp 25% điểm hoặc hoán đổi điểm số với top 1 tạo nên những pha lội ngược dòng ngoạn mục.</p>
-        </div>
-
-        <div className="glass-panel" style={{ padding: '24px 20px', textAlign: 'center' }}>
-          <div style={{ fontSize: '2.5rem', marginBottom: '12px' }}>🛡️</div>
-          <h4 style={{ fontSize: '1.1rem', marginBottom: '6px' }}>Khiên Bất Hoại</h4>
-          <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Bảo vệ điểm số an toàn trong 30 giây khỏi các đòn cướp điểm từ người chơi khác.</p>
-        </div>
-
-        <div className="glass-panel" style={{ padding: '24px 20px', textAlign: 'center' }}>
-          <div style={{ fontSize: '2.5rem', marginBottom: '12px' }}>🏆</div>
-          <h4 style={{ fontSize: '1.1rem', marginBottom: '6px' }}>Vinh Danh Podium</h4>
-          <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Bục trao giải Top 3 hoành tráng kèm pháo hoa và thống kê độ chính xác chi tiết.</p>
-        </div>
-      </div>
-
-      {/* Footer */}
-      <footer style={{ marginTop: '70px', paddingTop: '24px', borderTop: '1px solid rgba(255, 255, 255, 0.08)', textAlign: 'center', color: 'var(--text-dim)', fontSize: '0.85rem' }}>
-        <p>MarxArena • Nền tảng Gamification hỗ trợ học tập môn Những nguyên lý cơ bản của CN Mác - Lênin (MLN131)</p>
-        <p style={{ marginTop: '4px', fontSize: '0.78rem' }}>Độc bản & An toàn • Không thu thập dữ liệu cá nhân</p>
+      {/* Clean Footer */}
+      <footer style={{ marginTop: '54px', paddingTop: '20px', borderTop: '1px solid var(--border-subtle)', textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.82rem' }}>
+        MarxArena • Hỗ trợ học phần Những nguyên lý cơ bản của Chủ nghĩa Mác - Lênin & CNXHKH (MLN131)
       </footer>
     </div>
   );

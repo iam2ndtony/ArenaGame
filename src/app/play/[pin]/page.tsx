@@ -314,59 +314,60 @@ export default function PlayRoomPage() {
   // ----------------- SCREEN 1: REGISTER NICKNAME & AVATAR -----------------
   if (!joined) {
     return (
-      <div style={{ maxWidth: '480px', margin: '0 auto', padding: '24px 16px 60px' }}>
+      <div style={{ maxWidth: '440px', margin: '0 auto', padding: '28px 16px 60px' }}>
         <div style={{ textAlign: 'center', marginBottom: '24px' }}>
           <div style={{
-            width: '56px',
-            height: '56px',
-            borderRadius: '16px',
-            background: 'linear-gradient(135deg, #e62238 0%, #b31024 100%)',
+            width: '48px',
+            height: '48px',
+            borderRadius: '12px',
+            backgroundColor: 'var(--accent-red)',
             display: 'inline-flex',
             alignItems: 'center',
             justifyContent: 'center',
-            fontSize: '28px',
-            boxShadow: '0 0 25px rgba(230, 34, 56, 0.4)',
+            fontSize: '22px',
+            color: '#fff',
+            fontWeight: '800',
             marginBottom: '10px',
           }}>
-            ⭐
+            M
           </div>
-          <h1 style={{ fontSize: '1.8rem', fontWeight: '900' }}>
-            Vào Phòng <span style={{ color: 'var(--accent-gold)' }}>#{pin}</span>
+          <h1 style={{ fontSize: '1.6rem', fontWeight: '800' }}>
+            Vào phòng <span style={{ color: 'var(--accent-gold)' }}>#{pin}</span>
           </h1>
-          <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>
-            Chọn biệt danh và linh vật để tham chiến
+          <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+            Nhập biệt danh và chọn biểu tượng của bạn
           </p>
         </div>
 
-        <form onSubmit={handleJoin} className="glass-panel-elevated" style={{ padding: '26px 20px' }}>
-          <div style={{ marginBottom: '20px' }}>
-            <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: '700', marginBottom: '8px' }}>
-              Biệt Danh (Nickname):
+        <form onSubmit={handleJoin} className="glass-panel" style={{ padding: '24px 20px' }}>
+          <div style={{ marginBottom: '18px' }}>
+            <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: '600', marginBottom: '6px', color: 'var(--text-secondary)' }}>
+              BIỆT DANH CỦA BẠN:
             </label>
             <input
               type="text"
-              placeholder="Ví dụ: Đồng chí Nam, Triết Gia K45..."
+              placeholder="Nhập tên hiển thị..."
               maxLength={20}
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
               style={{
                 width: '100%',
-                padding: '14px 16px',
-                background: 'rgba(0,0,0,0.4)',
-                border: '1px solid var(--border-glass)',
-                borderRadius: '12px',
-                color: 'white',
-                fontSize: '1.1rem',
-                fontWeight: '700',
+                padding: '12px 14px',
+                backgroundColor: 'var(--bg-input)',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: '8px',
+                color: '#ffffff',
+                fontSize: '1rem',
+                fontWeight: '600',
                 outline: 'none',
               }}
             />
           </div>
 
-          <div style={{ marginBottom: '24px' }}>
-            <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: '700', marginBottom: '10px' }}>
-              Chọn Linh Vật Của Bạn:
+          <div style={{ marginBottom: '22px' }}>
+            <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: '600', marginBottom: '8px', color: 'var(--text-secondary)' }}>
+              CHỌN BIỂU TƯỢNG ĐẠI DIỆN:
             </label>
             <div style={{
               display: 'grid',
