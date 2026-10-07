@@ -88,8 +88,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <div style={{ textAlign: 'center', margin: '20px auto 44px', maxWidth: '720px' }}>
         <h1 style={{ fontSize: '2.5rem', fontWeight: '800', lineHeight: 1.25, marginBottom: '14px', color: 'var(--text-primary)' }}>
-          Đấu trường trắc nghiệm <br />
-          <span style={{ color: 'var(--accent-gold)' }}>Chính sách Tôn giáo & Dân tộc</span>
+          <span style={{ color: 'var(--accent-gold)' }}>Đấu trường trắc nghiệm</span>
         </h1>
         <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: '580px', margin: '0 auto 20px' }}>
           Quét mã QR bằng điện thoại hoặc nhập mã PIN phòng để tham gia trả lời câu hỏi và tranh tài trên bảng xếp hạng trực tiếp.
