@@ -672,7 +672,7 @@ export default function PlayRoomPage() {
         ) : currentQuestion ? (
           <QuestionCard
             title={`Phòng #${pin}`}
-            questionIndex={questionIndex}
+            questionIndex={totalQuestions > 0 ? questionIndex % totalQuestions : questionIndex}
             totalQuestions={totalQuestions}
             questionText={currentQuestion.question}
             options={currentQuestion.options}

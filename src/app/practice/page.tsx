@@ -4,25 +4,16 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import QuestionCard from '@/components/QuestionCard';
 import questionsData from '@/data/questions.json';
-
-interface QuestionItem {
-  id: number;
-  type?: string;
-  question: string;
-  options: {
-    A: string;
-    B: string;
-    C: string;
-    D: string;
-  };
-  answer: string;
-  explanation?: string;
-}
+import {
+  normalizeQuestionList,
+  prepareShuffledDeck,
+  NormalizedQuestion,
+} from '@/lib/questionUtils';
 
 export default function PracticePage() {
   const router = useRouter();
-  const rawQuestions = (questionsData?.questions || []) as QuestionItem[];
 
+  const [questions, setQuestions] = useState<NormalizedQuestion[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [isAnswered, setIsAnswered] = useState(false);
@@ -30,16 +21,41 @@ export default function PracticePage() {
   const [timerSeconds, setTimerSeconds] = useState(180);
   const [isFinished, setIsFinished] = useState(false);
 
-  const currentQ = rawQuestions[currentIndex];
+  // Initialize randomized deck on mount
+  useEffect(() => {
+    const normalized = normalizeQuestionList(questionsData);
+    setQuestions(prepareShuffledDeck(normalized));
+  }, []);
+
+  const handleRestart = () => {
+    const normalized = normalizeQuestionList(questionsData);
+    setQuestions(prepareShuffledDeck(normalized));
+    setCurrentIndex(0);
+    setSelectedOption(null);
+    setIsAnswered(false);
+    setScore(0);
+    setTimerSeconds(180);
+    setIsFinished(false);
+  };
 
   // Countdown timer
   useEffect(() => {
-    if (isFinished) return;
+    if (isFinished || questions.length === 0) return;
     const interval = setInterval(() => {
       setTimerSeconds((prev) => (prev > 0 ? prev - 1 : 0));
     }, 1000);
     return () => clearInterval(interval);
-  }, [isFinished]);
+  }, [isFinished, questions.length]);
+
+  if (questions.length === 0) {
+    return (
+      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)' }}>
+        Đang chuẩn bị đề thi ngẫu nhiên...
+      </div>
+    );
+  }
+
+  const currentQ = questions[currentIndex];
 
   if (!currentQ || isFinished) {
     return (
@@ -50,7 +66,7 @@ export default function PracticePage() {
             Hoàn Thành Bài Thi Thử!
           </h1>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '24px' }}>
-            Bạn đã hoàn thành toàn bộ câu hỏi ôn tập.
+            Bạn đã hoàn thành toàn bộ câu hỏi ôn tập với thứ tự câu hỏi ngẫu nhiên.
           </p>
 
           <div style={{
@@ -59,23 +75,16 @@ export default function PracticePage() {
             color: 'var(--accent-gold)',
             marginBottom: '24px',
           }}>
-            {score} / {rawQuestions.length} <span style={{ fontSize: '1rem', color: '#94a3b8' }}>câu đúng</span>
+            {score} / {questions.length} <span style={{ fontSize: '1rem', color: '#94a3b8' }}>câu đúng</span>
           </div>
 
           <div style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}>
             <button
-              onClick={() => {
-                setCurrentIndex(0);
-                setSelectedOption(null);
-                setIsAnswered(false);
-                setScore(0);
-                setTimerSeconds(180);
-                setIsFinished(false);
-              }}
+              onClick={handleRestart}
               className="btn-primary"
               style={{ padding: '12px 24px' }}
             >
-              Làm lại bài thi
+              Làm lại bài thi (Đề mới)
             </button>
             <button
               onClick={() => router.push('/')}
@@ -90,27 +99,18 @@ export default function PracticePage() {
     );
   }
 
-  const optionLetters = ['A', 'B', 'C', 'D'];
-  const optionsList = [
-    currentQ.options.A,
-    currentQ.options.B,
-    currentQ.options.C,
-    currentQ.options.D,
-  ];
-
   const handleSelectOption = (idx: number) => {
     if (isAnswered) return;
     setSelectedOption(idx);
     setIsAnswered(true);
 
-    const chosenLetter = optionLetters[idx];
-    if (chosenLetter === currentQ.answer) {
+    if (idx === currentQ.correctIndex) {
       setScore((prev) => prev + 1);
     }
   };
 
   const handleNext = () => {
-    if (currentIndex + 1 < rawQuestions.length) {
+    if (currentIndex + 1 < questions.length) {
       setCurrentIndex((prev) => prev + 1);
       setSelectedOption(null);
       setIsAnswered(false);
@@ -119,19 +119,19 @@ export default function PracticePage() {
     }
   };
 
-  const chosenLetter = selectedOption !== null ? optionLetters[selectedOption] : null;
-  const isCorrect = chosenLetter !== null ? chosenLetter === currentQ.answer : null;
-  const correctAnswerKey = currentQ.answer as keyof typeof currentQ.options;
-  const correctAnswerText = `${currentQ.answer}. ${currentQ.options[correctAnswerKey] || ''}`;
+  const letters = ['A', 'B', 'C', 'D'];
+  const isCorrect = selectedOption !== null ? selectedOption === currentQ.correctIndex : null;
+  const correctLetter = letters[currentQ.correctIndex] || '';
+  const correctAnswerText = `${correctLetter ? `${correctLetter}. ` : ''}${currentQ.options[currentQ.correctIndex] || ''}`;
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px 16px' }}>
       <QuestionCard
         title="Thi thử"
         questionIndex={currentIndex}
-        totalQuestions={rawQuestions.length}
+        totalQuestions={questions.length}
         questionText={currentQ.question}
-        options={optionsList}
+        options={currentQ.options}
         selectedOption={selectedOption}
         onSelectOption={handleSelectOption}
         isAnswered={isAnswered}
@@ -141,7 +141,7 @@ export default function PracticePage() {
         countdownSeconds={timerSeconds}
         onNext={handleNext}
         onClose={() => router.push('/')}
-        nextButtonText={currentIndex + 1 === rawQuestions.length ? 'Hoàn thành' : 'Tiếp theo'}
+        nextButtonText={currentIndex + 1 === questions.length ? 'Hoàn thành' : 'Tiếp theo'}
       />
     </div>
   );

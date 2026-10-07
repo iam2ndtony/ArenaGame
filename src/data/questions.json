@@ -1,7 +1,7 @@
 {
-  "title": "30 CÂU HỎI TRẮC NGHIỆM VỀ CHÍNH SÁCH TÔN GIÁO VÀ MỐI QUAN HỆ DÂN TỘC - TÔN GIÁO HIỆN NAY",
+  "title": "BỘ CÂU HỎI TRẮC NGHIỆM VỀ CHÍNH SÁCH TÔN GIÁO VÀ MỐI QUAN HỆ DÂN TỘC - TÔN GIÁO HIỆN NAY",
   "description": "Bộ câu hỏi ôn tập môn Chủ nghĩa xã hội khoa học chuẩn hóa cho Quizlet, Blooket, Kahoot",
-  "total_questions": 30,
+  "total_questions": 32,
   "questions": [
     {
       "id": 1,
@@ -362,6 +362,28 @@
         "D": "Giảm bớt vai trò lãnh đạo của Đảng và quản lý của Nhà nước"
       },
       "answer": "B"
+    },
+    {
+      "id": 31,
+      "type": "true_false",
+      "question": "Việt Nam là một quốc gia đa dân tộc và đa tôn giáo. Nhận định này Đúng hay Sai?",
+      "options": {
+        "A": "Đúng",
+        "B": "Sai"
+      },
+      "answer": "A",
+      "explanation": "Chính xác! Việt Nam có 54 dân tộc anh em cùng chung sống và hơn 16 tôn giáo được công nhận hoạt động hợp pháp."
+    },
+    {
+      "id": 32,
+      "type": "true_false",
+      "question": "Pháp luật Việt Nam nghiêm cấm mọi hành vi lợi dụng tín ngưỡng, tôn giáo để phá hoại hòa bình, độc lập dân tộc. Nhận định này Đúng hay Sai?",
+      "options": [
+        "Đúng",
+        "Sai"
+      ],
+      "answer": "Đúng",
+      "explanation": "Chính xác! Hiến pháp và Luật Tín ngưỡng, tôn giáo của Việt Nam luôn bảo đảm quyền tự do tín ngưỡng nhưng nghiêm cấm lợi dụng tôn giáo để vi phạm pháp luật."
     }
   ]
 }

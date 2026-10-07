@@ -139,11 +139,11 @@ export default function QuestionCard({
           {questionText}
         </h2>
 
-        {/* 4 Options List */}
+        {/* Options List: 2 options displayed in 2 balanced cards side-by-side; 3-4 options in column */}
         <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '11px',
+          display: 'grid',
+          gridTemplateColumns: options.length === 2 ? 'repeat(auto-fit, minmax(200px, 1fr))' : '1fr',
+          gap: options.length === 2 ? '14px' : '11px',
           marginBottom: isAnswered ? '16px' : '28px',
           position: 'relative',
           zIndex: 2,
@@ -183,14 +183,15 @@ export default function QuestionCard({
                 disabled={isAnswered || disabled}
                 style={{
                   width: '100%',
-                  padding: '14px 18px',
+                  padding: options.length === 2 ? '18px 20px' : '14px 18px',
+                  minHeight: options.length === 2 ? '68px' : 'auto',
                   backgroundColor: optBg,
                   border: optBorder,
-                  borderRadius: '10px',
+                  borderRadius: '12px',
                   textAlign: 'left',
                   color: optColor,
-                  fontSize: '0.95rem',
-                  fontWeight: '500',
+                  fontSize: options.length === 2 ? '1.02rem' : '0.95rem',
+                  fontWeight: options.length === 2 ? '600' : '500',
                   lineHeight: '1.45',
                   cursor: isAnswered ? 'default' : 'pointer',
                   transition: 'all 0.15s ease',
@@ -198,14 +199,15 @@ export default function QuestionCard({
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
+                  gap: '10px',
                 }}
               >
                 <span>{displayLabel}</span>
                 {isAnswered && isSelected && isCorrect && (
-                  <CheckCircle2 size={18} color="#10b981" />
+                  <CheckCircle2 size={20} color="#10b981" />
                 )}
                 {isAnswered && isSelected && !isCorrect && (
-                  <AlertCircle size={18} color="#ef4444" />
+                  <AlertCircle size={20} color="#ef4444" />
                 )}
               </button>
             );
