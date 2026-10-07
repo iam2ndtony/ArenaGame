@@ -98,7 +98,7 @@ export function normalizeQuestionList(rawData: any): NormalizedQuestion[] {
       question: q.question,
       options: optionsArray,
       correctIndex: correctIdx,
-      explanation: q.explanation || `Đáp án đúng là ${letter ? `${letter}. ` : ''}${optionsArray[correctIdx] || ''}`,
+      explanation: q.explanation || '',
     };
   });
 }
@@ -133,7 +133,7 @@ export function prepareShuffledDeck(questions: NormalizedQuestion[]): Normalized
       ...q,
       options: shuffledIndexed.map((item) => item.text),
       correctIndex: newCorrectIdx,
-      explanation: q.explanation || `Đáp án đúng là ${letters[newCorrectIdx]}: ${shuffledIndexed[newCorrectIdx]?.text}`,
+      explanation: q.explanation || '',
     };
   });
 }

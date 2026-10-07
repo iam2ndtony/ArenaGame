@@ -114,7 +114,7 @@ function normalizeQuestions(rawData) {
       question: q.question,
       options: optionsArray,
       correctIndex: correctIdx,
-      explanation: q.explanation || `Đáp án đúng là ${letter ? `${letter}. ` : ''}${optionsArray[correctIdx] || ''}`,
+      explanation: q.explanation || '',
     };
   });
 }
@@ -157,7 +157,7 @@ function generatePlayerQuestionDeck(baseQuestions) {
       ...q,
       options: shuffledIndexed.map((item) => item.text),
       correctIndex: newCorrectIdx,
-      explanation: q.explanation || `Đáp án đúng là ${letters[newCorrectIdx]}: ${shuffledIndexed[newCorrectIdx]?.text}`,
+      explanation: q.explanation || '',
     };
   });
 }
@@ -617,7 +617,6 @@ app.prepare().then(() => {
           callback({
             success: true,
             isCorrect: true,
-            explanation: q.explanation || 'Chính xác! Bạn nắm rất vững kiến thức Mác - Lênin.',
             chestOptions,
             stealCandidates,
           });
@@ -626,13 +625,20 @@ app.prepare().then(() => {
         player.wrongCount++;
         player.streak = 0;
 
+        const letters = ['A', 'B', 'C', 'D'];
+        const correctLetter = q ? letters[q.correctIndex] || '' : '';
+        const rawOpt = q ? q.options[q.correctIndex] || '' : '';
+        const formattedAnswer = rawOpt.startsWith(`${correctLetter}.`)
+          ? rawOpt
+          : `${correctLetter ? `${correctLetter}. ` : ''}${rawOpt}`;
+
         if (typeof callback === 'function') {
           callback({
             success: true,
             isCorrect: false,
             correctAnswerIndex: q ? q.correctIndex : 0,
-            correctAnswerText: q ? q.options[q.correctIndex] : '',
-            explanation: (q && q.explanation) || 'Chưa chính xác. Hãy cùng ôn lại bài học nhé!',
+            correctAnswerText: formattedAnswer,
+            explanation: (q && q.explanation) || '',
           });
         }
       }

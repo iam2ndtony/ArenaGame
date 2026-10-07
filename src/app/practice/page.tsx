@@ -120,9 +120,12 @@ export default function PracticePage() {
   };
 
   const letters = ['A', 'B', 'C', 'D'];
-  const isCorrect = selectedOption !== null ? selectedOption === currentQ.correctIndex : null;
-  const correctLetter = letters[currentQ.correctIndex] || '';
-  const correctAnswerText = `${correctLetter ? `${correctLetter}. ` : ''}${currentQ.options[currentQ.correctIndex] || ''}`;
+  const isCorrect = selectedOption !== null && currentQ ? selectedOption === currentQ.correctIndex : null;
+  const correctLetter = currentQ ? letters[currentQ.correctIndex] || '' : '';
+  const rawOptionText = currentQ ? currentQ.options[currentQ.correctIndex] || '' : '';
+  const correctAnswerText = rawOptionText.startsWith(`${correctLetter}.`)
+    ? rawOptionText
+    : `${correctLetter ? `${correctLetter}. ` : ''}${rawOptionText}`;
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px 16px' }}>
@@ -137,7 +140,7 @@ export default function PracticePage() {
         isAnswered={isAnswered}
         isCorrect={isCorrect}
         correctAnswerText={correctAnswerText}
-        explanation={currentQ.explanation}
+        explanation={!isCorrect && currentQ.explanation && !currentQ.explanation.startsWith('Đáp án đúng') ? currentQ.explanation : undefined}
         countdownSeconds={timerSeconds}
         onNext={handleNext}
         onClose={() => router.push('/')}

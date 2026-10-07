@@ -214,33 +214,63 @@ export default function QuestionCard({
           })}
         </div>
 
-        {/* Answer Explanation & Correct Answer box when answered */}
+        {/* Answer Feedback box when answered */}
         {isAnswered && (
           <div style={{
             background: isCorrect ? 'rgba(16, 185, 129, 0.15)' : 'rgba(239, 68, 68, 0.15)',
             border: isCorrect ? '1px solid rgba(16, 185, 129, 0.35)' : '1px solid rgba(239, 68, 68, 0.35)',
             borderRadius: '12px',
-            padding: '14px 16px',
+            padding: '14px 18px',
             marginBottom: '20px',
             position: 'relative',
             zIndex: 2,
           }}>
-            <div style={{
-              fontWeight: '800',
-              fontSize: '0.95rem',
-              color: isCorrect ? '#34d399' : '#f87171',
-              marginBottom: '4px',
-            }}>
-              {isCorrect ? '✓ Chính xác!' : '✕ Chưa chính xác!'}
-            </div>
-            {correctAnswerText && !isCorrect && (
-              <div style={{ fontSize: '0.88rem', color: '#fef08a', marginBottom: '6px', fontWeight: '600' }}>
-                Đáp án đúng: {correctAnswerText}
+            {isCorrect ? (
+              <div style={{
+                fontWeight: '800',
+                fontSize: '1.05rem',
+                color: '#34d399',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+              }}>
+                <CheckCircle2 size={20} color="#10b981" />
+                <span>Chính xác!</span>
               </div>
-            )}
-            {explanation && (
-              <div style={{ fontSize: '0.85rem', color: '#cbd5e1', lineHeight: '1.45' }}>
-                {explanation}
+            ) : (
+              <div>
+                <div style={{
+                  fontWeight: '800',
+                  fontSize: '0.98rem',
+                  color: '#f87171',
+                  marginBottom: '6px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                }}>
+                  <AlertCircle size={18} color="#ef4444" />
+                  <span>Chưa chính xác!</span>
+                </div>
+                {correctAnswerText && (
+                  <div style={{
+                    fontSize: '0.92rem',
+                    color: '#fef08a',
+                    fontWeight: '600',
+                    lineHeight: '1.45',
+                  }}>
+                    Đáp án đúng: {correctAnswerText}
+                  </div>
+                )}
+                {explanation && !explanation.startsWith('Đáp án đúng') && (
+                  <div style={{
+                    fontSize: '0.85rem',
+                    color: '#cbd5e1',
+                    lineHeight: '1.45',
+                    marginTop: '6px',
+                  }}>
+                    {explanation}
+                  </div>
+                )}
               </div>
             )}
           </div>
